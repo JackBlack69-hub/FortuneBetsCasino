@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
 import { makeStyles, Grid } from "@material-ui/core";
+import CasinoUI from "./CasinoUI";
 
 import { NavLink as Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -98,7 +99,7 @@ const useStyles = makeStyles(theme => ({
       },
       "&:hover": {
         backgroundColor: "rgba(225, 80, 36, 0.20)",
-        color: "#E25222",
+        // color: "#E25222",
         "& span .MuiButton-startIcon": {
           color: "#E25222",
         },
@@ -133,7 +134,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "14px",
         marginLeft: "17px",
-        // color: "#E25222",
+        color: "#E25222",
       },
     },
   },
@@ -160,7 +161,7 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: "rgba(225, 80, 36, 0.20)",
         color: "#fff",
         "& span .MuiButton-startIcon": {
-          // color: "#E25222",
+          color: "#E25222",
         },
       },
       "&:active": {
@@ -252,7 +253,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "19px",
         marginLeft: "20px",
-        // color: "#E25222",
+        color: "#E25222",
       },
     },
   },
@@ -802,35 +803,45 @@ const HeaderNav = ({
         </div>
       
       <br />
+      
+      <Link
+            exact
+            // activeClassName={classes.subActivePoker}
+            // className={classes.subPoker}
+            to="/CasinoUI"
+            // style={{ outline: "none" }}
+          >
+        <Button styles={{ display: "flex", flexDirection: "row", }}>
+          <div
+            className="casino"
+            style={{
+              color: "#fff",
+              fontFamily: "Rubik",
+              fontSize: "18px",
+              fontWeight: 400,
+              marginTop: 5,
+              paddingRight: 10,
+              paddingLeft: 18,
+              
+            }}
+          >
+            <img src={Casino} alt="" />
+          </div>
 
-      <Button styles={{ display: "flex", flexDirection: "row" }}>
-        <div
-          className="casino"
-          style={{
-            color: "#fff",
-            fontFamily: "Rubik",
-            fontSize: "18px",
-            fontWeight: 400,
-            marginTop: 5,
-            paddingRight: 10,
-            paddingLeft: 18,
-          }}
-        >
-          <img src={Casino} alt="" />
-        </div>
-
-        <div
-          className="casino"
-          style={{
-            color: "#fff",
-            fontFamily: "Rubik",
-            fontSize: "18px",
-            fontWeight: 400,
-          }}
-        >
-          <span>Casino</span>
-        </div>
-      </Button>
+          <div
+            className="casino"
+            style={{
+              color: "#fff",
+              fontFamily: "Rubik",
+              fontSize: "18px",
+              fontWeight: 400,
+            }}
+          >
+            <span>Casino</span>
+          </div>
+        </Button>
+      </Link>
+      
 
       <br />
       <Box
@@ -941,7 +952,7 @@ const HeaderNav = ({
 
           <Link
             exact
-            activeClassName={classes.subActivePoker}
+            activeClassName={classes.subActivecoi}
             className={classes.subCoinflip}
             to="/coinflip"
             style={{ outline: "none" }}

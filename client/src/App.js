@@ -45,6 +45,7 @@ import Faq from "./views/FAQ";
 import Banned from "./views/Banned";
 import History from "./views/History";
 import Registration from "./views/Registration";
+import CasinoUI from "./components/chat/CasinoUI";
 
 import AffiliatesRedirect from "./views/AffiliatesRedirect";
 
@@ -344,7 +345,7 @@ const App = () => {
                 />
 
                 <Route exact path="/jackpot" component={Jackpot} />
-
+                <Route exact path="/CasinoUI" component={CasinoUI} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/affiliates" component={Affiliates} />
                 <Route exact path="/roulette" component={Roulette} />
