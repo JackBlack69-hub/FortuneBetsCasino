@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     left: 140,
     width: "30%",
     height: "auto",
-    zIndex: 1,
+    zIndex: 2,
   },
   textField1: {
     color: "white",
