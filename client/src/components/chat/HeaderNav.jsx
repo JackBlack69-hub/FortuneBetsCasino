@@ -145,7 +145,7 @@ const useStyles = makeStyles(theme => ({
       // textTransform: "inherit",
       width: "90%",
       height: "2.5rem",
-      color: "red",
+      color: "#fff",
       borderLeft: "2px solid #12191D",
       borderRadius: "10px",
       fontFamily: "Rubik",
@@ -1463,7 +1463,7 @@ const HeaderNav = ({
           ) : isAuthenticated && user ? (
             <Box>
               <div className={classes.login}>
-                <Box className={classes.pfp}>
+                {/* <Box className={classes.pfp}>
                   <Box className={classes.avatar2}>
                     <Link exact to="/profile" style={{ outline: "none" }}>
                       <Avatar
@@ -1506,8 +1506,8 @@ const HeaderNav = ({
                       )}
                     </Box>
                   </Link>
-                </Box>
-                <Box className={classes.pfpp}>
+                </Box> */}
+                {/* <Box className={classes.pfpp}>
                   <span>
                     <span
                       style={{ cursor: "pointer" }}
@@ -1525,7 +1525,7 @@ const HeaderNav = ({
                       )}
                     </span>
                   </span>
-                </Box>
+                </Box> */}
               </div>
               <Box>
                 <Box className={classes.balance}>
