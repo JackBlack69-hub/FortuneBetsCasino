@@ -19,7 +19,7 @@ import logo from "../assets/testlogo1.png";
 const useStyles = makeStyles(theme => ({
   root: {
     zIndex: 1000000,
-    background: "#12191D",
+    background: "#001824",
 
     display: "flex",
     textAlign: "center",
@@ -145,6 +145,26 @@ const useStyles = makeStyles(theme => ({
       display: "flex",
     },
   },
+
+  buttonNavbar: {
+    border: "1px solid #E7721C",
+    color: "#E7741B",
+    marginTop: "-7%",
+    marginLeft: "41%",
+    display: "flex",
+    width: "197px",
+    height: "50px",
+    padding: "10px",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+    flexShrink: 0,
+    textTransform: "capitalize !important",
+    "&:hover": {
+      background: "linear-gradient(134deg, #E7741B 0%, #DA1F2A 100%)",
+      color: "#fff",
+    },
+  },
 }));
 
 const Navbar = ({
@@ -162,8 +182,7 @@ const Navbar = ({
 
   return (
     <AppBar position="static" className={classes.root}>
-      <Box style={{ marginLeft: "20%", height: "110px" }}>
-        {" "}
+      <Box style={{ marginLeft: "20%", height: "110px", display: "inline" }}>
         <InputBase
           placeholder="Search games..."
           style={{
@@ -180,25 +199,22 @@ const Navbar = ({
           inputProps={{ "aria-label": "search" }}
         />
         <Button
-          style={{
-            marginTop: "-7%",
-            marginLeft: "41%",
-            display: "flex",
-            width: "197px",
-            height: "50px",
-            padding: "10px",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px",
-            flexShrink: 0,
-            background:
-              ":hover linear-gradient(134deg, #E7741B 0%, #DA1F2A 100%)",
-          }}
           variant="outlined"
+          className={classes.buttonNavbar}
+          style={{
+            background: "linear-gradient(134deg, #E7741B 0%, #DA1F2A 100%)",
+            color: "#fff",
+          }}
         >
           Sign In
         </Button>
-        <Button variant="outlined">Outlined</Button>
+        <Button
+          variant="outlined"
+          className={classes.buttonNavbar}
+          style={{ marginLeft: "60%", marginTop: "-4.5%" }}
+        >
+          Buy Crypto
+        </Button>
       </Box>
       <Box className={classes.boxmenu}>
         <Box className={classes.mobileNav1}>

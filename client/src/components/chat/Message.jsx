@@ -1,5 +1,5 @@
 import React from "react";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 import { makeStyles } from "@material-ui/core";
 
 // MUI Components
@@ -39,7 +39,7 @@ import Rip from "../../assets/emoji/rip.png";
 import Pepe from "../../assets/emoji/pepe.png";
 import Monkas from "../../assets/emoji/monkaS.png";
 
-import Emoji from './Emoji';
+import Emoji from "./Emoji";
 
 const useStyles = makeStyles({
   content: {
@@ -258,27 +258,58 @@ const Message = ({ message }) => {
         variant="rounded"
         src={message.user.avatar}
         className={classes.avatar}
-        style={{ border: `2px solid ${message.user.level.levelColor}`, }}
+        style={{ border: `2px solid ${message.user.level.levelColor}` }}
       />
       <Box className="message">
-        <Moment style={{ marginLeft: "auto", marginBottom: "-20px", marginRight: "19px", opacity: "0.7", color: "#5f6368", }} format="hh:mm A">{message.created}</Moment>
+        <Moment
+          style={{
+            marginLeft: "auto",
+            marginBottom: "-20px",
+            marginRight: "19px",
+            opacity: "0.7",
+            color: "#5f6368",
+          }}
+          format="hh:mm A"
+        >
+          {message.created}
+        </Moment>
         <Box>
           <Box className="username">
-            {<span className="userlevel" style={{ background: `${message.user.level.levelColor}`, }}>{message.user.level.name}</span>}
-            {message.user.rank === 5 && <span className="admin">ADMIN</span>}
+            {
+              <span
+                className="userlevel"
+                style={{ background: `${message.user.level.levelColor}` }}
+              >
+                {message.user.level.name}
+              </span>
+            }
+            {message.user.rank === 5 && (
+              <span className="admin">PARAPARAPARARARA</span>
+            )}
             {message.user.rank === 4 && <span className="mod">MOD</span>}
             {message.user.rank === 3 && <span className="dev">DEV</span>}
-            {message.user.rank === 2 && <span className="partner">PARTNER</span>}
+            {message.user.rank === 2 && (
+              <span className="partner">PARTNER</span>
+            )}
             {message.user.username}{" "}
           </Box>
         </Box>
         <Box className={classes.content}>
           {message.content.split(/\b/).map((word, i) => {
-            let emote = emotes.find(emote => emote.word.toLowerCase() === word.toLowerCase());;
+            let emote = emotes.find(
+              emote => emote.word.toLowerCase() === word.toLowerCase()
+            );
             if (emote) {
-              return <Emoji key={i} src={emote.src} alt={emote.alt} title={emote.alt} />
+              return (
+                <Emoji
+                  key={i}
+                  src={emote.src}
+                  alt={emote.alt}
+                  title={emote.alt}
+                />
+              );
             }
-            return word
+            return word;
           })}
         </Box>
       </Box>

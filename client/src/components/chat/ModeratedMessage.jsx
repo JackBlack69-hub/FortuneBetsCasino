@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 import { makeStyles } from "@material-ui/core";
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { chatSocket } from "../../services/websocket.service";
+import profileImg from "../../assets/profile.svg";
 
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -46,14 +47,18 @@ import Rip from "../../assets/emoji/rip.png";
 import Pepe from "../../assets/emoji/pepe.png";
 import Monkas from "../../assets/emoji/monkaS.png";
 
-import Emoji from './Emoji';
+import Emoji from "./Emoji";
 
 const useStyles = makeStyles({
   content: {
-    color: "#707479",
-    fontSize: 13,
+    color: "#FFF",
+    fontSize: "13px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "normal",
+
     fontFamily: "Rubik",
-    fontWeight: 500,
+    marginLeft: 0,
     letterSpacing: ".1em",
     whiteSpace: "normal",
     marginTop: 15,
@@ -62,20 +67,24 @@ const useStyles = makeStyles({
     hyphens: "auto",
   },
   avatar: {
-    width: 35,
-    height: 35,
-    marginTop: "-5px",
+    width: "21.667px",
+    height: "20px",
+    marginTop: "5px",
     marginLeft: "20px",
     marginRight: "8px",
     borderRadius: "100%",
   },
   chatbox: {
+    background: "#021E2C",
     display: "flex",
-    padding: "20px 0px 20px 0px",
+    padding: "10px 0px 2px 0px",
     borderTop: "1.5px solid #1b1f22",
     fontFamily: "Rubik",
-    borderRadius: 0,
+    borderRadius: 10,
+    margin: "4%",
+
     "& .message": {
+      background: "#021E2C",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -95,7 +104,7 @@ const useStyles = makeStyles({
       color: "#e0e0e0",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "camelcase",
       letterSpacing: ".1em",
       position: "relative",
       marginTop: "7px",
@@ -305,7 +314,7 @@ const Message = ({ rank, message, isAuthenticated, isLoading, user }) => {
 
   const openTipUserModal = () => {
     setModalVisible(true);
-  }
+  };
 
   // MenuItem onClick event handler
   const onContextClick = (event, action, props) => {
@@ -343,84 +352,122 @@ const Message = ({ rank, message, isAuthenticated, isLoading, user }) => {
         userName={message.user.username}
         userAvatar={message.user.avatar}
       />
-      {
-        rank >= 3 ? (
-          <Fragment>
-            <ContextMenu className={classes.contextMenu} id={message.msgId}>
-              <p style={{ marginTop: 0, paddingLeft: "1.5rem", color: "#4F79FD" }}>
-                CONTROLS:
-              </p>
-              <MenuItem
-                className={classes.contextMenuItem}
-                onClick={e =>
-                  onContextClick(e, "remove-message", {
-                    msgId: message.msgId,
-                  })
-                }
-              >
-                <i className="fas fa-trash-alt" /> DELETE MESSAGE
-              </MenuItem>
-              <MenuItem
-                className={classes.contextMenuItem}
-                onClick={e => onContextClick(e, "mute", { userId: message.user.id })}
-              >
-                <i className="fas fa-microphone-slash Blue" /> MUTE USER
-              </MenuItem>
-              <MenuItem
-                className={classes.contextMenuItem}
-                onClick={e =>
-                  onContextClick(e, "ban", {
-                    userId: message.user.id,
-                  })
-                }
-              >
-                <i className="fas fa-gavel Red" /> BAN USER
-              </MenuItem>
-            </ContextMenu>
-          </Fragment>
-        ) : (
-          <Fragment>
-          </Fragment>
-        )
-      }
+      {rank >= 3 ? (
+        <Fragment>
+          <ContextMenu className={classes.contextMenu} id={message.msgId}>
+            <p
+              style={{ marginTop: 0, paddingLeft: "1.5rem", color: "#4F79FD" }}
+            >
+              CONTROLS:
+            </p>
+            <MenuItem
+              className={classes.contextMenuItem}
+              onClick={e =>
+                onContextClick(e, "remove-message", {
+                  msgId: message.msgId,
+                })
+              }
+            >
+              <i className="fas fa-trash-alt" /> DELETE MESSAGE
+            </MenuItem>
+            <MenuItem
+              className={classes.contextMenuItem}
+              onClick={e =>
+                onContextClick(e, "mute", { userId: message.user.id })
+              }
+            >
+              <i className="fas fa-microphone-slash Blue" /> MUTE USER
+            </MenuItem>
+            <MenuItem
+              className={classes.contextMenuItem}
+              onClick={e =>
+                onContextClick(e, "ban", {
+                  userId: message.user.id,
+                })
+              }
+            >
+              <i className="fas fa-gavel Red" /> BAN USER
+            </MenuItem>
+          </ContextMenu>
+        </Fragment>
+      ) : (
+        <Fragment></Fragment>
+      )}
       <ContextMenuTrigger id={message.msgId}>
         <Box className={classes.chatbox}>
           <Avatar
             variant="rounded"
-            src={message.user.avatar}
+            src={profileImg}
             className={classes.avatar}
-            style={{ border: `2px solid ${message.user.level.levelColor}`, }}
+            // style={{ border: `2px solid ${message.user.level.levelColor}` }}
           />
           <Box className="message">
-            <Moment style={{ marginLeft: "auto", marginBottom: "-20px", marginRight: "19px", opacity: "0.7", color: "#5f6368", }} format="hh:mm A">{message.created}</Moment>
+            <Moment
+              style={{
+                marginLeft: "auto",
+                marginBottom: "-20px",
+                marginRight: "19px",
+                opacity: "0.7",
+                color: "#5f6368",
+              }}
+              format="hh:mm A"
+            >
+              {message.created}
+            </Moment>
             <Box>
               {isAuthenticated && user ? (
-                <Box onClick={handleLeftClick} className="username">
-                  {<span className="userlevel" style={{ background: `${message.user.level.levelColor}`, }}>{message.user.level.name}</span>}
-                  {message.user.rank === 5 && <span className="admin">ADMIN</span>}
-                  {message.user.rank === 4 && <span className="mod">MOD</span>}
-                  {message.user.rank === 3 && <span className="dev">DEV</span>}
-                  {message.user.rank === 2 && <span className="partner">PARTNER</span>}
+                <Box
+                  onClick={handleLeftClick}
+                  className="username"
+                  style={{
+                    color: "rgba(255, 255, 255, 0.50)",
+                    fontFamily: "Rubik",
+                    fontSize: "13px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                  }}
+                >
                   {message.user.username}{" "}
                 </Box>
               ) : (
                 <Box className="username2">
-                  {<span className="userlevel" style={{ background: `${message.user.level.levelColor}`, }}>{message.user.level.name}</span>}
-                  {message.user.rank === 5 && <span className="admin">ADMIN</span>}
+                  {
+                    <span
+                      className="userlevel"
+                      style={{ background: `${message.user.level.levelColor}` }}
+                    >
+                      {message.user.level.name}
+                    </span>
+                  }
+                  {message.user.rank === 5 && (
+                    <span className="admin">ADMIN</span>
+                  )}
                   {message.user.rank === 4 && <span className="mod">MOD</span>}
                   {message.user.rank === 3 && <span className="dev">DEV</span>}
-                  {message.user.rank === 2 && <span className="partner">PARTNER</span>}
+                  {message.user.rank === 2 && (
+                    <span className="partner">PARTNER</span>
+                  )}
                   {message.user.username}{" "}
                 </Box>
               )}
             </Box>
-            <Box className={classes.content}>
+            <Box m={3} className={classes.content}>
               {message.content.split(/\b/).map((word, i) => {
-                let emote = emotes.find(emote => emote.word.toLowerCase() === word.toLowerCase());;
+                let emote = emotes.find(
+                  emote => emote.word.toLowerCase() === word.toLowerCase()
+                );
                 if (emote) {
-                  return <Emoji key={i} src={emote.src} alt={emote.alt} title={emote.alt} />
+                  return (
+                    <Emoji
+                      key={i}
+                      src={emote.src}
+                      alt={emote.alt}
+                      title={emote.alt}
+                    />
+                  );
                 }
-                return word
+                return word;
               })}
             </Box>
           </Box>

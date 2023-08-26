@@ -1,23 +1,23 @@
-import React from 'react';
+import React from "react";
 import Casino_rectangle from "../../assets/Casino_rectangle.png";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 import Casino_coins from "../../assets/Casino_coins.png";
 
 const useStyles = makeStyles({
   container: {
-    position: 'relative',
+    position: "relative",
     marginTop: 18,
     marginBottom: 31,
-    display: 'flex',
-    alignItems: 'flex-start',
-  }, 
+    display: "flex",
+    alignItems: "flex-start",
+  },
   rectangleImage: {
-    width: '100%', 
-    height: 'auto', 
+    width: "100%",
+    height: "auto",
     padding: 20,
   },
   coinContainer: {
-    position: 'absolute',
+    position: "absolute",
     width: "21%",
     height: "auto",
     top: 42,
@@ -25,34 +25,36 @@ const useStyles = makeStyles({
     zIndex: 1,
   },
   coinsImage: {
-    width: '100%',
-    height: 'auto',
+    width: "100%",
+    height: "auto",
   },
   textContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 130,
     left: 140,
-    width: "30%", 
-    height:'auto',
+    width: "30%",
+    height: "auto",
     zIndex: 1,
   },
   textField1: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
     fontWeight: 600,
-    fontFamily: 'Rubik',
+    fontFamily: "Rubik",
     marginBottom: -60,
   },
   textField2: {
-    color: 'white',
-    lineHeight: 'normal',
+    color: "white",
+    lineHeight: "normal",
     fontSize: 64,
     fontWeight: 600,
-    fontFamily: 'Rubik',
+    fontFamily: "Rubik",
     marginBottom: 10,
+    width: "100%",
+    height: "auto",
   },
   button: {
-    width: '45%', 
+    width: "45%",
     height: 49,
     borderRadius: 10,
     fontSize: 15,
@@ -79,9 +81,17 @@ export default function CasinoUI() {
         <p className={classes.textField2}>Up to 500$</p>
         <button className={classes.button}>Get Started!</button>
       </div>
-      <img className={classes.rectangleImage} src={Casino_rectangle} alt="Casino Rectangle" />
+      <img
+        className={classes.rectangleImage}
+        src={Casino_rectangle}
+        alt="Casino Rectangle"
+      />
       <div className={classes.coinContainer}>
-        <img className={classes.coinsImage} src={Casino_coins} alt="Casino Coins" />
+        <img
+          className={classes.coinsImage}
+          src={Casino_coins}
+          alt="Casino Coins"
+        />
       </div>
     </div>
   );

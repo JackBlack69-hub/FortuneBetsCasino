@@ -8,7 +8,7 @@ import SunIcon from "../../assets/Sun.svg";
 const MarketPrices = () => {
   return (
     <div style={{ border: "1px solid white" }}>
-      <Grid style={{ padding: "2%" }} container xs={12}>
+      <Grid style={{ padding: "4%" }} container xs={12}>
         <Grid
           style={{
             color: "#FFF",
