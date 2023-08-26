@@ -81,7 +81,7 @@ const useStyles = makeStyles(theme => ({
   subJackpot: {
     textDecoration: "none",
     "& > button": {
-      marginTop: "-5px",
+      marginTop: "5px",
       // textTransform: "inherit",
       width: "90%",
       height: "2.5rem",
@@ -97,14 +97,14 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.15,
       },
       "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
+        backgroundColor: "rgba(225, 80, 36, 0.20)",
+        color: "#E25222",
         "& span .MuiButton-startIcon": {
-          color: "#FAE081",
+          color: "#E25222",
         },
       },
       "&:active": {
-        color: "#e0e0e0",
+        // color: "#E25222",
       },
       "& span .MuiButton-startIcon": {
         marginRight: "14px",
@@ -115,7 +115,7 @@ const useStyles = makeStyles(theme => ({
   subActiveJackpot: {
     textDecoration: "none",
     "& > button": {
-      marginTop: "-5px",
+      marginTop: "5px",
       // textTransform: "inherit",
       width: "90%",
       height: "2.5rem",
@@ -133,7 +133,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "14px",
         marginLeft: "17px",
-        color: "#FAE081",
+        // color: "#E25222",
       },
     },
   },
@@ -157,14 +157,14 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.15,
       },
       "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
+        backgroundColor: "rgba(225, 80, 36, 0.20)",
+        color: "#fff",
         "& span .MuiButton-startIcon": {
-          color: "#FAE081",
+          // color: "#E25222",
         },
       },
       "&:active": {
-        color: "#e0e0e0",
+        color: "#E25222",
       },
       "& span .MuiButton-startIcon": {
         marginRight: "14px",
@@ -186,21 +186,21 @@ const useStyles = makeStyles(theme => ({
       fontSize: "18px",
       fontWeight: 400,
       letterSpacing: ".05em",
-      marginLeft: 12,
+      marginLeft: 16,
       "& img": {
         opacity: 0.15,
       },
       "& span .MuiButton-startIcon": {
         marginRight: "14px",
         marginLeft: "17px",
-        color: "#FAE081",
+        // color: "#E25222",
       },
     },
   },
   subCoinflip: {
     textDecoration: "none",
     "& > button": {
-      marginTop: "-5px",
+      marginTop: "5px",
       // textTransform: "inherit",
       width: "90%",
       height: "2.5rem",
@@ -216,14 +216,14 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.15,
       },
       "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
+        backgroundColor: "rgba(225, 80, 36, 0.20)",
+        color: "#fff",
         "& span .MuiButton-startIcon": {
-          color: "#FAE081",
+          color: "#E25222",
         },
       },
       "&:active": {
-        color: "#e0e0e0",
+        color: "#E25222",
       },
       "& span .MuiButton-startIcon": {
         marginRight: "19px",
@@ -252,7 +252,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "19px",
         marginLeft: "20px",
-        color: "#FAE081",
+        // color: "#E25222",
       },
     },
   },
@@ -275,14 +275,14 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.15,
       },
       "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
+        backgroundColor: "rgba(225, 80, 36, 0.20)",
+        color: "#E25222",
         "& span .MuiButton-startIcon": {
-          color: "#FAE081",
+          color: "#E25222",
         },
       },
       "&:active": {
-        color: "#e0e0e0",
+        color: "#E25222",
       },
       "& span .MuiButton-startIcon": {
         marginRight: "22px",
@@ -311,7 +311,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "22px",
         marginLeft: "20px",
-        color: "#FAE081",
+        color: "#E25222",
       },
     },
   },
@@ -334,14 +334,14 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.15,
       },
       "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
+        backgroundColor: "rgba(225, 80, 36, 0.20)",
+        color: "#E25222",
         "& span .MuiButton-startIcon": {
-          color: "#FAE081",
+          color: "#E25222",
         },
       },
       "&:active": {
-        color: "#e0e0e0",
+        color: "#E25222",
       },
       "& span .MuiButton-startIcon": {
         marginRight: "20px",
@@ -371,7 +371,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "20px",
         marginLeft: "21px",
-        color: "#FAE081",
+        color: "#E25222",
       },
     },
   },
@@ -394,14 +394,14 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.15,
       },
       "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
+        backgroundColor: "rgba(225, 80, 36, 0.20)",
+        color: "#E25222",
         "& span .MuiButton-startIcon": {
-          color: "#FAE081",
+          color: "#E25222",
         },
       },
       "&:active": {
-        color: "#e0e0e0",
+        color: "#E25222",
       },
       "& span .MuiButton-startIcon": {
         marginRight: "22px",
@@ -430,132 +430,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "22px",
         marginLeft: "22px",
-        color: "#FAE081",
-      },
-    },
-  },
-  subDeposit: {
-    textDecoration: "none",
-    "& > button": {
-      textTransform: "inherit",
-      width: "90%",
-      height: "2.5rem",
-      color: "#707479",
-      borderLeft: "2px solid #12191D",
-      borderRadius: "10px",
-      fontFamily: "Rubik",
-      fontSize: "12.5px",
-      fontWeight: 500,
-      letterSpacing: ".05em",
-      marginLeft: 12,
-      "& img": {
-        opacity: 0.15,
-      },
-      "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
-        "& span .MuiButton-startIcon": {
-          color: "#FAE081",
-        },
-      },
-      "&:active": {
-        color: "#e0e0e0",
-      },
-      "& span .MuiButton-startIcon": {
-        marginRight: "127px",
-        marginLeft: "-10px",
-        color: "#707479",
-      },
-    },
-  },
-  subWithdraw: {
-    textDecoration: "none",
-    "& > button": {
-      textTransform: "inherit",
-      width: "90%",
-      height: "2.5rem",
-      color: "#707479",
-      borderLeft: "2px solid #12191D",
-      borderRadius: "10px",
-      fontFamily: "Rubik",
-      fontSize: "12.5px",
-      fontWeight: 500,
-      letterSpacing: ".05em",
-      marginLeft: 12,
-      "& img": {
-        opacity: 0.15,
-      },
-      "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
-        "& span .MuiButton-startIcon": {
-          color: "#FAE081",
-        },
-      },
-      "&:active": {
-        color: "#e0e0e0",
-      },
-      "& span .MuiButton-startIcon": {
-        marginRight: "113px",
-        marginLeft: "-10px",
-        color: "#707479",
-      },
-    },
-  },
-  subAffiliate: {
-    textDecoration: "none",
-    "& > button": {
-      textTransform: "inherit",
-      width: "90%",
-      height: "2.5rem",
-      color: "#707479",
-      borderLeft: "2px solid #12191D",
-      borderRadius: "10px",
-      fontFamily: "Rubik",
-      fontSize: "12.5px",
-      fontWeight: 500,
-      letterSpacing: ".05em",
-      marginLeft: 12,
-      "& img": {
-        opacity: 0.15,
-      },
-      "&:hover": {
-        backgroundColor: "#182128",
-        color: "#e0e0e0",
-        "& span .MuiButton-startIcon": {
-          color: "#FAE081",
-        },
-      },
-      "&:active": {
-        color: "#e0e0e0",
-      },
-      "& span .MuiButton-startIcon": {
-        marginRight: "110px",
-        marginLeft: "-11px",
-        color: "#707479",
-      },
-    },
-  },
-  subActiveAffiliate: {
-    textDecoration: "none",
-    "& > button": {
-      width: "90%",
-      height: "2.5rem",
-      color: "#707479",
-      borderLeft: "2px solid #12191D",
-      borderRadius: "10px",
-      fontFamily: "Rubik",
-      fontSize: "12.5px",
-      fontWeight: 500,
-      letterSpacing: ".05em",
-      marginLeft: 12,
-      "& img": {
-        opacity: 0.15,
-      },
-      "& span .MuiButton-startIcon": {
-        marginRight: "110px",
-        marginLeft: "-11px",
-        color: "#FAE081",
+        color: "#E25222",
       },
     },
   },
@@ -593,7 +468,7 @@ const useStyles = makeStyles(theme => ({
     "& > h5": {
       marginRight: 20,
       fontWeight: 500,
-      color: "#e0e0e0",
+      color: "#E25222",
     },
   },
   noLink: {
@@ -742,7 +617,22 @@ const useStyles = makeStyles(theme => ({
     },
   },
 
-  TopButton: {},
+  Topbutton: {
+    width: 100,
+    height: 31,
+    borderRadius: 10,
+    fontSize: 15,
+    fontFamily: "Arial, sans-serif",
+    border: "2px solid #fff",
+    position: "relative",
+    overflow: "hidden",
+    zIndex: 1,
+    boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+    backgroundColor: "transparent",
+    color: "#fff",
+    cursor: "pointer",
+    transition: "background-color 0.3s, transform 0.2s",
+  },
 }));
 
 const HeaderNav = ({
@@ -830,7 +720,7 @@ const HeaderNav = ({
       />
       <div
         className={classes.mobileNavTest}
-        style={{ display: "grid", gridTemplateColumns: "auto 1fr" }}
+        style={{ display: "flex" }}
       >
         <div
           style={{
@@ -839,7 +729,7 @@ const HeaderNav = ({
             flexDirection: "column",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div style={{ display: "flex", alignSelf: "flex-start"}}>
             <a
               className={classes.logoimage}
               href="https://fortunebets.xyz/"
@@ -850,7 +740,7 @@ const HeaderNav = ({
             </a>
             <div
               className="text"
-              style={{ display: "flex", flexDirection: "column" }}
+              style={{ display: "flex", flexDirection: "column",alignItems:'flex-start' }}
             >
               <span
                 style={{
@@ -875,36 +765,42 @@ const HeaderNav = ({
               </span>
             </div>
           </div>
-          <div style={{ marginTop: 15, display: "flex", marginLeft: 10 }}>
-            <span style={{ color: "white", marginRight: -20, fontSize: 19 }}>
-              dsadasdsa
-            </span>
-            <Button
+
+         
+            <div style={{ marginTop: 15, display: 'flex',flexDirection:'row'}}>
+              <span style={{ color: 'white', fontSize: 19 }}>
+                0.000056347
+              </span>
+              <Button
+                style={{
+                  marginTop: 3,
+                  backgroundColor: '#05FF0033',
+                  color: '#00D758',
+                  marginLeft: 20, // Adjusted margin
+                  height: 24,
+                  minWidth: 65,
+                }}
+              >
+                +24.56%
+              </Button>
+            </div>
+            <div
               style={{
-                marginTop: 3,
-                backgroundColor: "#05FF0033",
-                color: "#00D758",
-                marginLeft: 50,
-                height: 24,
-                width: 65,
+                marginTop: 20,
+                display: 'flex',
+                flexDirection:'row',
+                justifyContent: 'space-between', 
+                width: '100%',
+                alignSelf: "flex-start"
               }}
             >
-              +24.56%
-            </Button>
+              <button className={classes.Topbutton} >Buy/Sell</button>
+              <button className={classes.Topbutton}>Dashboard</button>
+            </div>
           </div>
-          <div
-            style={{
-              marginTop: 20,
-              display: "flex",
-              justifyContent: "space-evenly",
-              width: "100%",
-            }}
-          >
-            <button class="Topbutton">Buy/Sell</button>
-            <button class="Topbutton">Dashboard</button>
-          </div>
+
         </div>
-      </div>
+      
       <br />
 
       <Button styles={{ display: "flex", flexDirection: "row" }}>
@@ -1045,7 +941,7 @@ const HeaderNav = ({
 
           <Link
             exact
-            activeClassName={classes.subActiveCoinflip}
+            activeClassName={classes.subActivePoker}
             className={classes.subCoinflip}
             to="/coinflip"
             style={{ outline: "none" }}
@@ -1176,8 +1072,8 @@ const HeaderNav = ({
                 startIcon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="23"
-                    height="22"
+                    width="15"
+                    height="13"
                     viewBox="0 0 23 22"
                     fill="none"
                   >
