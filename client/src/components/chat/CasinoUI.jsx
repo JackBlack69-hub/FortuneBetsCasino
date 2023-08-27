@@ -30,40 +30,47 @@ const useStyles = makeStyles({
   },
   textContainer: {
     position: "absolute",
-    top: 130,
-    left: 140,
-    width: "30%",
+    top: "45%",
+    left: "20%",
+    transform: "translate(-50%, -50%)",
+    width: "26%", 
     height: "auto",
     zIndex: 2,
   },
+  textFitter: {
+    display: "flex",
+    flexDirection: "column",
+  },
   textField1: {
     color: "white",
-    fontSize: 16,
+    fontSize: "1.3vw", 
     fontWeight: 600,
     fontFamily: "Rubik",
-    marginBottom: -60,
   },
   textField2: {
     color: "white",
     lineHeight: "normal",
-    fontSize: 64,
+    fontSize: "3vw", 
     fontWeight: 600,
     fontFamily: "Rubik",
-    marginBottom: 10,
+    marginBottom:10,
+    marginTop:-20,
+    // marginBottom: "1vw",
+    // marginTop: "-2vw", 
     width: "100%",
     height: "auto",
   },
   button: {
-    width: "45%",
-    height: 49,
-    borderRadius: 10,
-    fontSize: 15,
+    width: "65%",
+    height: "2.7vw", 
+    borderRadius: 10, 
+    fontSize: "1.2vw", 
     fontFamily: "Arial, sans-serif",
-    border: "2px solid #fff",
+    border: "0.15vw solid #fff", 
     position: "relative",
     overflow: "hidden",
     zIndex: 1,
-    boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 0.3vw 0.6vw rgba(0, 0, 0, 0.1)", 
     backgroundColor: "transparent",
     color: "#fff",
     cursor: "pointer",
@@ -76,16 +83,18 @@ export default function CasinoUI() {
 
   return (
     <div className={classes.container}>
-      <div className={classes.textContainer}>
-        <p className={classes.textField1}>Sign Up & Get Reward</p>
-        <p className={classes.textField2}>Up to 500$</p>
-        <button className={classes.button}>Get Started!</button>
-      </div>
       <img
         className={classes.rectangleImage}
         src={Casino_rectangle}
         alt="Casino Rectangle"
       />
+      <div className={classes.textContainer}>
+        <div className={classes.textFitter}>
+          <p className={classes.textField1}>Sign Up & Get Reward</p>
+          <p className={classes.textField2}>Up to 500$</p>
+          <button className={classes.button}>Get Started!</button>
+        </div>
+      </div>
       <div className={classes.coinContainer}>
         <img
           className={classes.coinsImage}
