@@ -11,6 +11,7 @@ import Button from "@material-ui/core/Button";
 import ChatIcon from "@material-ui/icons/Chat";
 import MenuIcon from "@material-ui/icons/Menu";
 import InputBase from "@material-ui/core/InputBase";
+import Modal from "@material-ui/core/Modal";
 
 //import Toolbar from "@material-ui/core/Toolbar";
 
@@ -159,7 +160,20 @@ const useStyles = makeStyles(theme => ({
       color: "#fff",
     },
   },
+
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
+
+// const classes = useStyles();
+// // getModalStyle is not a pure function, we roll the style only on the first render
+// const [modalStyle] = React.useState(getModalStyle);
 
 const Navbar = ({
   mobileChat,
@@ -173,10 +187,52 @@ const Navbar = ({
 }) => {
   // Declare State
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  function rand() {
+    return Math.round(Math.random() * 20) - 10;
+  }
+
+  function getModalStyle() {
+    const top = 50 + rand();
+    const left = 50 + rand();
+
+    return {
+      top: `${top}%`,
+      left: `${left}%`,
+      transform: `translate(-${top}%, -${left}%)`,
+    };
+  }
+
+  const [modalStyle] = React.useState(getModalStyle);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Text in a modal</h2>
+      <p id="simple-modal-description">
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      </p>
+    </div>
+  );
 
   return (
     <AppBar position="static" className={classes.root}>
-      <Box style={{ display:'flex',flexDirection:'row',justifyContent:'space-around',margin: "2%", }}>
+      <Box
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around",
+          margin: "2%",
+        }}
+      >
         <InputBase
           placeholder="Search games..."
           style={{
@@ -190,13 +246,17 @@ const Navbar = ({
           }}
           inputProps={{ "aria-label": "search" }}
         />
-        <div style={{
-                display: 'flex',
-                flexDirection:'row',
-                justifyContent: 'space-between', 
-                alignSelf: "center"}}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignSelf: "center",
+          }}
+        >
           <Button
             variant="outlined"
+            onClick={handleOpen}
             className={classes.buttonNavbar}
             style={{
               background: "linear-gradient(134deg, #E7741B 0%, #DA1F2A 100%)",
@@ -205,14 +265,18 @@ const Navbar = ({
           >
             Sign In
           </Button>
-          <Button
-            variant="outlined"
-            className={classes.buttonNavbar}
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
           >
+            {body}
+          </Modal>
+          <Button variant="outlined" className={classes.buttonNavbar}>
             Buy Crypto
           </Button>
         </div>
-        
       </Box>
       <Box className={classes.boxmenu}>
         <Box className={classes.mobileNav1}>
