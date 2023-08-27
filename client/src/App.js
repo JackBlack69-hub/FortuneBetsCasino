@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Rubik",
   },
   addTopMargin: {
-    marginTop: "50px",
+    marginTop: "3%",
   },
   drawerPaper1: {
     marginTop: "22%",
