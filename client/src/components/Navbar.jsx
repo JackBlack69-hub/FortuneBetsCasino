@@ -165,6 +165,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   paper: {
+    zIndex: 1000000000000000000000000,
     position: "absolute",
     width: "40%",
     backgroundColor: "#001724",
@@ -179,7 +180,6 @@ const useStyles = makeStyles(theme => ({
       margin: "2%",
       background: "#021E2C",
       borderRadius: 10,
-      zIndex: 1000000000000000,
 
       "& label": {
         border: "none",
@@ -222,8 +222,8 @@ const Navbar = ({
   }
 
   function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
+    const top = 67;
+    const left = 60;
 
     return {
       top: `${top}%`,
@@ -336,6 +336,78 @@ const Navbar = ({
     </div>
   );
 
+  const bodySignIN = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Sign In</h2>
+      <p id="simple-modal-description">
+        <form noValidate autoComplete="off">
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Email"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Password"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              borderRadius: "10px",
+              border: "1px solid #FFF",
+              marginBottom: "3%",
+            }}
+          >
+            <Button
+              variant="outlined"
+              style={{ color: "#fff", textTransform: "capitalize" }}
+            >
+              Sign In
+            </Button>
+          </div>
+        </form>
+        <div className={classes.text1}>
+          <b style={{ color: "#fff" }}>Forgot Password</b>
+        </div>
+        <div
+          className={classes.text1}
+          style={{ borderBottom: "2px solid #002D47", paddingBottom: "2%" }}
+        >
+          Don't have an account?{" "}
+          <b style={{ color: "#fff" }}>Register an account</b>
+        </div>
+
+        <div
+          style={{
+            textAlign: "center",
+            borderRadius: "10px",
+            border: "1px solid #FFF",
+            marginBottom: "3%",
+          }}
+        >
+          <Button
+            variant="outlined"
+            style={{ color: "#fff", textTransform: "capitalize" }}
+          >
+            Sign Up with MetaMask <img src={metamaskIcon}></img>
+          </Button>
+        </div>
+
+        <div className={classes.text1}>
+          fortunebets is protected by reCaptcha. Privacy Policy and Terms of
+          Service apply.
+        </div>
+      </p>
+    </div>
+  );
+
   return (
     <AppBar position="static" className={classes.root}>
       <Box
@@ -385,7 +457,7 @@ const Navbar = ({
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
           >
-            {body}
+            {bodySignIN}
           </Modal>
           <Button variant="outlined" className={classes.buttonNavbar}>
             Buy Crypto
