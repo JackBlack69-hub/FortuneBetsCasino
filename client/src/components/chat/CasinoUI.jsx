@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     marginBottom: 31,
     display: "flex",
     alignItems: "flex-start",
+    width: "100%",
   },
   rectangleImage: {
     width: "100%",

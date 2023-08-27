@@ -163,11 +163,15 @@ const useStyles = makeStyles(theme => ({
 
   paper: {
     position: "absolute",
-    width: 20,
-    backgroundColor: theme.palette.background.paper,
+    width: "40%",
+    backgroundColor: "#001724",
     border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    borderRadius: "20px",
+    padding: theme.spacing(1, 1, 1),
+    "& #simple-modal-title": {
+      color: "#FFF",
+      textAlign: "center",
+    },
   },
 }));
 
@@ -216,7 +220,7 @@ const Navbar = ({
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
+      <h2 id="simple-modal-title">Create Account</h2>
       <p id="simple-modal-description">
         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
       </p>
@@ -229,7 +233,7 @@ const Navbar = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          // justifyContent: "center",
+          justifyContent: "center",
           gap: "2%",
           margin: "2%",
         }}

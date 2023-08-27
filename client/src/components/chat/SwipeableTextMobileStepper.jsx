@@ -9,11 +9,10 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import CasinoUI from "./CasinoUI";
-import Casino_coins from "../../assets/Casino_coins.png"
-import Casino_rectangle from "../../assets/Casino_rectangle.png"
-import Casino2 from "../../assets/Casino2.png"
-import poker_table from "../../assets/Poker_table.png"
-
+import Casino_coins from "../../assets/Casino_coins.png";
+import Casino_rectangle from "../../assets/Casino_rectangle.png";
+import Casino2 from "../../assets/Casino2.png";
+import poker_table from "../../assets/Poker_table.png";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -48,7 +47,7 @@ const tutorialSteps = [
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: "100%",
-    flexGrow: 1,
+    // flexGrow: 1,
     background: "inherit",
   },
 
@@ -87,8 +86,22 @@ function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        <CasinoUI rectangleImage={Casino_rectangle} coinsImage={Casino_coins} textField1="Sign Up & Get Reward" textField2="Up to 500$" buttonText="Get Started!" />
-        <CasinoUI rectangleImage={Casino2} coinsImage={poker_table} textField1="Watch & Bet" textField2="Poker Night" buttonText="Watch Live" />
+        <CasinoUI
+          rectangleImage={Casino_rectangle}
+          coinsImage={Casino_coins}
+          textField1="Sign Up & Get Reward"
+          textField2="Up to 500$"
+          buttonText="Get Started!"
+        />
+        <CasinoUI
+          rectangleImage={Casino2}
+          coinsImage={poker_table}
+          textField1="Watch & Bet"
+          textField2="Poker Night"
+          buttonText="Watch Live"
+        />
+
+        <img src={Casino_rectangle}></img>
       </AutoPlaySwipeableViews>
       <MobileStepper
         className={classes.root}
