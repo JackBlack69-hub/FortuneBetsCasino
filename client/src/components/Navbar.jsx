@@ -229,7 +229,8 @@ const Navbar = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-around",
+          justifyContent: "center",
+          gap: "2%",
           margin: "2%",
         }}
       >
@@ -250,8 +251,8 @@ const Navbar = ({
           style={{
             display: "flex",
             flexDirection: "row",
-            justifyContent: "space-between",
             alignSelf: "center",
+            gap: "2%",
           }}
         >
           <Button
