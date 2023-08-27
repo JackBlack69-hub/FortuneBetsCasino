@@ -21,13 +21,13 @@ import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import Tooltip from "@material-ui/core/Tooltip";
-import Slider from 'react-input-slider';
-import HistoryIcon from '@material-ui/icons/History';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import Slider from "react-input-slider";
+import HistoryIcon from "@material-ui/icons/History";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { NavLink as Link } from "react-router-dom";
-import { TransitionGroup } from 'react-transition-group';
-import Collapse from '@material-ui/core/Collapse';
-import Grow from '@material-ui/core/Grow';
+import { TransitionGroup } from "react-transition-group";
+import Collapse from "@material-ui/core/Collapse";
+import Grow from "@material-ui/core/Grow";
 
 import error from "../assets/error.wav";
 import success from "../assets/success.wav";
@@ -163,8 +163,7 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     height: "60px",
     [theme.breakpoints.down("xs")]: {
-      "& > div": {
-      },
+      "& > div": {},
     },
     "& > img": {
       marginLeft: "2rem",
@@ -348,7 +347,8 @@ const useStyles = makeStyles(theme => ({
       justifyContent: "center",
       width: "100%",
       background: "#0F1519",
-      boxShadow: "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)",
+      boxShadow:
+        "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)",
       borderRadius: 5,
       "& h5, h3": {
         margin: 0,
@@ -404,9 +404,7 @@ const useStyles = makeStyles(theme => ({
   },
   players: {
     margin: "auto",
-    [theme.breakpoints.down("sm")]: {
-
-    },
+    [theme.breakpoints.down("sm")]: {},
   },
   smallBet: {
     "&:nth-child(odd)": {
@@ -631,9 +629,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: "15px",
     marginTop: "11px",
     letterSpacing: "0.05rem",
-    [theme.breakpoints.down("xs")]: {
-
-    },
+    [theme.breakpoints.down("xs")]: {},
   },
   sliderWrapperText2: {
     fontSize: "11px",
@@ -837,7 +833,6 @@ const useStyles = makeStyles(theme => ({
       marginTop: "270px",
     },
   },
-
 }));
 
 const Jackpot = ({ user, isAuthenticated }) => {
@@ -889,9 +884,12 @@ const Jackpot = ({ user, isAuthenticated }) => {
   const [privateHashMiddle, setPrivateHashMiddle] = useState(null);
   const [privateHashHigh, setPrivateHashHigh] = useState(null);
 
-  const [jackpotAnimationDurationLow, setJackpotAnimationDurationLow] = useState(10);  // Animation Duration
-  const [jackpotAnimationDurationMiddle, setJackpotAnimationDurationMiddle] = useState(10);  // Animation Duration
-  const [jackpotAnimationDurationHigh, setJackpotAnimationDurationHigh] = useState(10);  // Animation Duration
+  const [jackpotAnimationDurationLow, setJackpotAnimationDurationLow] =
+    useState(10); // Animation Duration
+  const [jackpotAnimationDurationMiddle, setJackpotAnimationDurationMiddle] =
+    useState(10); // Animation Duration
+  const [jackpotAnimationDurationHigh, setJackpotAnimationDurationHigh] =
+    useState(10); // Animation Duration
 
   const [rotationLow, setRotationLow] = useState(0); // Rotation
   const [rotationMiddle, setRotationMiddle] = useState(0); // Rotation
@@ -925,16 +923,58 @@ const Jackpot = ({ user, isAuthenticated }) => {
   const [startCountDownMiddle, setStartCountdownMiddle] = useState(false);
   const [startCountDownHigh, setStartCountdownHigh] = useState(false);
 
-  const dataPieOFF = [{ winningPercentage: 100, },]
+  const dataPieOFF = [{ winningPercentage: 100 }];
 
   //Pie, player colors
   const pieCOLORS = [
-    "#469dda", "#de5041", "#24a94d", "#edb545", "#e760da", "#5574df", "#e17624", "#4b9a6c", "#ab73e8",
-    "#317262", "#c3e089", "#805151", "#a36f9d", "#c4b174", "#95da36", "#d5a1af", "#cb377a", "#3d6b23",
-    "#cb6e51", "#85358d", "#51d7b3", "#745427", "#92972f", "#cc626e", "#cda0db", "#b0d8ac", "#99292f",
-    "#375164", "#7d335e", "#6ca454", "#dc6fbc", "#4d468a", "#68c5d2", "#82794e", "#d5da3d", "#d1997b",
-    "#a178d4", "#769d82", "#d23b58", "#a7b8cc", "#55de41", "#50543e", "#5a81cf", "#86401f", "#c48c41",
-    "#5a642b", "#a123d4"];
+    "#469dda",
+    "#de5041",
+    "#24a94d",
+    "#edb545",
+    "#e760da",
+    "#5574df",
+    "#e17624",
+    "#4b9a6c",
+    "#ab73e8",
+    "#317262",
+    "#c3e089",
+    "#805151",
+    "#a36f9d",
+    "#c4b174",
+    "#95da36",
+    "#d5a1af",
+    "#cb377a",
+    "#3d6b23",
+    "#cb6e51",
+    "#85358d",
+    "#51d7b3",
+    "#745427",
+    "#92972f",
+    "#cc626e",
+    "#cda0db",
+    "#b0d8ac",
+    "#99292f",
+    "#375164",
+    "#7d335e",
+    "#6ca454",
+    "#dc6fbc",
+    "#4d468a",
+    "#68c5d2",
+    "#82794e",
+    "#d5da3d",
+    "#d1997b",
+    "#a178d4",
+    "#769d82",
+    "#d23b58",
+    "#a7b8cc",
+    "#55de41",
+    "#50543e",
+    "#5a81cf",
+    "#86401f",
+    "#c48c41",
+    "#5a642b",
+    "#a123d4",
+  ];
 
   const dataPieLow = playersLow;
   const dataPieMiddle = playersMiddle;
@@ -943,7 +983,14 @@ const Jackpot = ({ user, isAuthenticated }) => {
   const RADIAN = Math.PI / 180;
 
   //Label Low Circle
-  const renderCustomizedLabelLow = ({ cx, cy, midAngle, innerRadius, outerRadius, index }) => {
+  const renderCustomizedLabelLow = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    index,
+  }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
@@ -959,9 +1006,8 @@ const Jackpot = ({ user, isAuthenticated }) => {
           width={47}
           height={47}
           viewBox="0 0 47 47"
-          style={{ clipPath: "circle(50%)", }}
+          style={{ clipPath: "circle(50%)" }}
           preserveAspectRatio="none"
-
         >
           <image
             href={dataPieLow[index].avatar}
@@ -978,16 +1024,27 @@ const Jackpot = ({ user, isAuthenticated }) => {
           />
         </svg>
       );
-    } else { }
+    } else {
+    }
   };
 
   //Label Middle Circle
-  const renderCustomizedLabelMiddle = ({ cx, cy, midAngle, innerRadius, outerRadius, index }) => {
+  const renderCustomizedLabelMiddle = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    index,
+  }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-    if (dataPieMiddle.length > 0 && dataPieMiddle[index].winningPercentage > 6.99) {
+    if (
+      dataPieMiddle.length > 0 &&
+      dataPieMiddle[index].winningPercentage > 6.99
+    ) {
       return (
         <svg
           x={x - 24}
@@ -999,14 +1056,14 @@ const Jackpot = ({ user, isAuthenticated }) => {
           height={47}
           viewBox="0 0 47 47"
           preserveAspectRatio="none"
-          style={{ clipPath: "circle(50%)", }}
+          style={{ clipPath: "circle(50%)" }}
         >
           <image
             href={dataPieMiddle[index].avatar}
             style={{
               clipPath: "circle(50%)",
               transform: `rotate(${-midAngle + 90}deg)`,
-              transformOrigin: "center"
+              transformOrigin: "center",
             }}
             height="47px"
             width="47px"
@@ -1016,11 +1073,19 @@ const Jackpot = ({ user, isAuthenticated }) => {
           />
         </svg>
       );
-    } else { }
+    } else {
+    }
   };
 
   //Label High Circle
-  const renderCustomizedLabelHigh = ({ cx, cy, midAngle, innerRadius, outerRadius, index }) => {
+  const renderCustomizedLabelHigh = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    index,
+  }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
@@ -1036,7 +1101,7 @@ const Jackpot = ({ user, isAuthenticated }) => {
           width={47}
           height={47}
           viewBox="0 0 47 47"
-          style={{ clipPath: "circle(50%)", }}
+          style={{ clipPath: "circle(50%)" }}
           preserveAspectRatio="none"
         >
           <image
@@ -1044,7 +1109,7 @@ const Jackpot = ({ user, isAuthenticated }) => {
             style={{
               clipPath: "circle(50%)",
               transform: `rotate(${-midAngle + 90}deg)`,
-              transformOrigin: "center"
+              transformOrigin: "center",
             }}
             height="47px"
             width="47px"
@@ -1054,62 +1119,75 @@ const Jackpot = ({ user, isAuthenticated }) => {
           />
         </svg>
       );
-    } else { }
+    } else {
+    }
   };
 
   // CheckFunction LOW
   function CheckFunctionLow() {
     if (dataPieLow.length > 0) {
       return dataPieLow;
-    }
-    else
-      return dataPieOFF;
-  };
+    } else return dataPieOFF;
+  }
 
   // CheckFunction Middle
   function CheckFunctionMiddle() {
     if (dataPieMiddle.length > 0) {
       return dataPieMiddle;
-    }
-    else
-      return dataPieOFF;
-  };
+    } else return dataPieOFF;
+  }
 
   // CheckFunction High
   function CheckFunctionHigh() {
     if (dataPieHigh.length > 0) {
       return dataPieHigh;
-    }
-    else
-      return dataPieOFF;
-  };
+    } else return dataPieOFF;
+  }
 
   // Pot LOW Title
   function PotTitleCheckLow() {
-    if (playersLow.map(player => player.betAmount).reduce((a, b) => a + b, 0).toFixed(2) > 0) {
-      return `$${playersLow.map(player => player.betAmount).reduce((a, b) => a + b, 0).toFixed(2)}`;
-    }
-    else
-      return "-";
-  };
+    if (
+      playersLow
+        .map(player => player.betAmount)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2) > 0
+    ) {
+      return `$${playersLow
+        .map(player => player.betAmount)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2)}`;
+    } else return "-";
+  }
 
   // Pot Middle Title
   function PotTitleCheckMiddle() {
-    if (playersMiddle.map(player => player.betAmount).reduce((a, b) => a + b, 0).toFixed(2) > 0) {
-      return `$${playersMiddle.map(player => player.betAmount).reduce((a, b) => a + b, 0).toFixed(2)}`;
-    }
-    else
-      return "-";
-  };
+    if (
+      playersMiddle
+        .map(player => player.betAmount)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2) > 0
+    ) {
+      return `$${playersMiddle
+        .map(player => player.betAmount)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2)}`;
+    } else return "-";
+  }
 
   // Pot High Title
   function PotTitleCheckHigh() {
-    if (playersHigh.map(player => player.betAmount).reduce((a, b) => a + b, 0).toFixed(2) > 0) {
-      return `$${playersHigh.map(player => player.betAmount).reduce((a, b) => a + b, 0).toFixed(2)}`;
-    }
-    else
-      return "-";
-  };
+    if (
+      playersHigh
+        .map(player => player.betAmount)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2) > 0
+    ) {
+      return `$${playersHigh
+        .map(player => player.betAmount)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2)}`;
+    } else return "-";
+  }
 
   // Button onClickFocusLow event handler LOW focus
   const onClickFocusLow = () => {
@@ -1267,21 +1345,21 @@ const Jackpot = ({ user, isAuthenticated }) => {
   // Get rotation for the wheel LOW
   const getRotationDEGLow = (winningTicket, maxTicket) => {
     const rotationPercent = winningTicket / maxTicket;
-    const rotationDEG = ((360 - 360 * rotationPercent) + 360 * 30);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
+    const rotationDEG = 360 - 360 * rotationPercent + 360 * 30; // original: ((360 - 360 * rotationPercent) + 360 * 30)
     return rotationDEG;
   };
 
   // Get rotation for the wheel Middle
   const getRotationDEGMiddle = (winningTicket, maxTicket) => {
     const rotationPercent = winningTicket / maxTicket;
-    const rotationDEG = ((360 - 360 * rotationPercent) + 360 * 30);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
+    const rotationDEG = 360 - 360 * rotationPercent + 360 * 30; // original: ((360 - 360 * rotationPercent) + 360 * 30)
     return rotationDEG;
   };
 
   // Get rotation for the wheel High
   const getRotationDEGHigh = (winningTicket, maxTicket) => {
     const rotationPercent = winningTicket / maxTicket;
-    const rotationDEG = ((360 - 360 * rotationPercent) + 360 * 30);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
+    const rotationDEG = 360 - 360 * rotationPercent + 360 * 30; // original: ((360 - 360 * rotationPercent) + 360 * 30)
     return rotationDEG;
   };
 
@@ -1338,31 +1416,47 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setHideTimerLow("none");
           setShowPointerLow(true);
           setGameStatusLow(4);
-          if (schema.current.AnimationDuration / 1000 > 5.50) {
-            const rotationPercentCalc = schema.current.winningTicketCalc / schema.current.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) * (schema.current.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) - rotationDEGCalc
+          if (schema.current.AnimationDuration / 1000 > 5.5) {
+            const rotationPercentCalc =
+              schema.current.winningTicketCalc / schema.current.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 15) *
+              (schema.current.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 15 - rotationDEGCalc;
             setPieStartAngleLow(schema.current.pieStartAngle - pieDegreeCalc);
             setPieEndAngleLow(schema.current.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationLow(schema.current.AnimationDuration / 1000);
+            setJackpotAnimationDurationLow(
+              schema.current.AnimationDuration / 1000
+            );
             setRotationLow(rotationDEGCalc);
-          }
-          else if (schema.current.AnimationDuration / 1000 > 1.1) {
-            const rotationPercentCalc = schema.current.winningTicketCalc / schema.current.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) * (schema.current.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) - rotationDEGCalc
+          } else if (schema.current.AnimationDuration / 1000 > 1.1) {
+            const rotationPercentCalc =
+              schema.current.winningTicketCalc / schema.current.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 5) *
+              (schema.current.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 5 - rotationDEGCalc;
             setPieStartAngleLow(schema.current.pieStartAngle - pieDegreeCalc);
             setPieEndAngleLow(schema.current.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationLow(schema.current.AnimationDuration / 1000);
+            setJackpotAnimationDurationLow(
+              schema.current.AnimationDuration / 1000
+            );
             setRotationLow(rotationDEGCalc);
-          }
-          else {
-            const rotationPercentCalc = schema.current.winningTicketCalc / schema.current.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360) * (schema.current.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360) - rotationDEGCalc
+          } else {
+            const rotationPercentCalc =
+              schema.current.winningTicketCalc / schema.current.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360) *
+              (schema.current.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 - rotationDEGCalc;
             setPieStartAngleLow(schema.current.pieStartAngle - pieDegreeCalc);
             setPieEndAngleLow(schema.current.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationLow(schema.current.AnimationDuration / 1000);
+            setJackpotAnimationDurationLow(
+              schema.current.AnimationDuration / 1000
+            );
             setRotationLow(rotationDEGCalc);
           }
         }
@@ -1370,31 +1464,62 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setHideTimerMiddle("none");
           setShowPointerMiddle(true);
           setGameStatusMiddle(4);
-          if (schema.currentMiddle.AnimationDuration / 1000 > 5.50) {
-            const rotationPercentCalc = schema.currentMiddle.winningTicketCalc / schema.currentMiddle.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) * (schema.currentMiddle.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) - rotationDEGCalc
-            setPieStartAngleMiddle(schema.currentMiddle.pieStartAngle - pieDegreeCalc);
-            setPieEndAngleMiddle(schema.currentMiddle.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationMiddle(schema.currentMiddle.AnimationDuration / 1000);
+          if (schema.currentMiddle.AnimationDuration / 1000 > 5.5) {
+            const rotationPercentCalc =
+              schema.currentMiddle.winningTicketCalc /
+              schema.currentMiddle.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 15) *
+              (schema.currentMiddle.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 15 - rotationDEGCalc;
+            setPieStartAngleMiddle(
+              schema.currentMiddle.pieStartAngle - pieDegreeCalc
+            );
+            setPieEndAngleMiddle(
+              schema.currentMiddle.pieEndAngle - pieDegreeCalc
+            );
+            setJackpotAnimationDurationMiddle(
+              schema.currentMiddle.AnimationDuration / 1000
+            );
             setRotationMiddle(rotationDEGCalc);
-          }
-          else if (schema.currentMiddle.AnimationDuration / 1000 > 1.1) {
-            const rotationPercentCalc = schema.currentMiddle.winningTicketCalc / schema.currentMiddle.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) * (schema.currentMiddle.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) - rotationDEGCalc
-            setPieStartAngleMiddle(schema.currentMiddle.pieStartAngle - pieDegreeCalc);
-            setPieEndAngleMiddle(schema.currentMiddle.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationMiddle(schema.currentMiddle.AnimationDuration / 1000);
+          } else if (schema.currentMiddle.AnimationDuration / 1000 > 1.1) {
+            const rotationPercentCalc =
+              schema.currentMiddle.winningTicketCalc /
+              schema.currentMiddle.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 5) *
+              (schema.currentMiddle.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 5 - rotationDEGCalc;
+            setPieStartAngleMiddle(
+              schema.currentMiddle.pieStartAngle - pieDegreeCalc
+            );
+            setPieEndAngleMiddle(
+              schema.currentMiddle.pieEndAngle - pieDegreeCalc
+            );
+            setJackpotAnimationDurationMiddle(
+              schema.currentMiddle.AnimationDuration / 1000
+            );
             setRotationMiddle(rotationDEGCalc);
-          }
-          else {
-            const rotationPercentCalc = schema.currentMiddle.winningTicketCalc / schema.currentMiddle.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360) * (schema.currentMiddle.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360) - rotationDEGCalc
-            setPieStartAngleMiddle(schema.currentMiddle.pieStartAngle - pieDegreeCalc);
-            setPieEndAngleMiddle(schema.currentMiddle.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationMiddle(schema.currentMiddle.AnimationDuration / 1000);
+          } else {
+            const rotationPercentCalc =
+              schema.currentMiddle.winningTicketCalc /
+              schema.currentMiddle.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360) *
+              (schema.currentMiddle.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 - rotationDEGCalc;
+            setPieStartAngleMiddle(
+              schema.currentMiddle.pieStartAngle - pieDegreeCalc
+            );
+            setPieEndAngleMiddle(
+              schema.currentMiddle.pieEndAngle - pieDegreeCalc
+            );
+            setJackpotAnimationDurationMiddle(
+              schema.currentMiddle.AnimationDuration / 1000
+            );
             setRotationMiddle(rotationDEGCalc);
           }
         }
@@ -1402,31 +1527,56 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setHideTimerHigh("none");
           setShowPointerHigh(true);
           setGameStatusHigh(4);
-          if (schema.currentHigh.AnimationDuration / 1000 > 5.50) {
-            const rotationPercentCalc = schema.currentHigh.winningTicketCalc / schema.currentHigh.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) * (schema.currentHigh.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) - rotationDEGCalc
-            setPieStartAngleHigh(schema.currentHigh.pieStartAngle - pieDegreeCalc);
+          if (schema.currentHigh.AnimationDuration / 1000 > 5.5) {
+            const rotationPercentCalc =
+              schema.currentHigh.winningTicketCalc /
+              schema.currentHigh.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 15) *
+              (schema.currentHigh.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 15 - rotationDEGCalc;
+            setPieStartAngleHigh(
+              schema.currentHigh.pieStartAngle - pieDegreeCalc
+            );
             setPieEndAngleHigh(schema.currentHigh.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationHigh(schema.currentHigh.AnimationDuration / 1000);
+            setJackpotAnimationDurationHigh(
+              schema.currentHigh.AnimationDuration / 1000
+            );
             setRotationHigh(rotationDEGCalc);
-          }
-          else if (schema.currentHigh.AnimationDuration / 1000 > 1.1) {
-            const rotationPercentCalc = schema.currentHigh.winningTicketCalc / schema.currentHigh.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) * (schema.currentHigh.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) - rotationDEGCalc
-            setPieStartAngleHigh(schema.currentHigh.pieStartAngle - pieDegreeCalc);
+          } else if (schema.currentHigh.AnimationDuration / 1000 > 1.1) {
+            const rotationPercentCalc =
+              schema.currentHigh.winningTicketCalc /
+              schema.currentHigh.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 5) *
+              (schema.currentHigh.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 5 - rotationDEGCalc;
+            setPieStartAngleHigh(
+              schema.currentHigh.pieStartAngle - pieDegreeCalc
+            );
             setPieEndAngleHigh(schema.currentHigh.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationHigh(schema.currentHigh.AnimationDuration / 1000);
+            setJackpotAnimationDurationHigh(
+              schema.currentHigh.AnimationDuration / 1000
+            );
             setRotationHigh(rotationDEGCalc);
-          }
-          else {
-            const rotationPercentCalc = schema.currentHigh.winningTicketCalc / schema.currentHigh.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360) * (schema.currentHigh.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360) - rotationDEGCalc
-            setPieStartAngleHigh(schema.currentHigh.pieStartAngle - pieDegreeCalc);
+          } else {
+            const rotationPercentCalc =
+              schema.currentHigh.winningTicketCalc /
+              schema.currentHigh.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360) *
+              (schema.currentHigh.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 - rotationDEGCalc;
+            setPieStartAngleHigh(
+              schema.currentHigh.pieStartAngle - pieDegreeCalc
+            );
             setPieEndAngleHigh(schema.currentHigh.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationHigh(schema.currentHigh.AnimationDuration / 1000);
+            setJackpotAnimationDurationHigh(
+              schema.currentHigh.AnimationDuration / 1000
+            );
             setRotationHigh(rotationDEGCalc);
           }
         }
@@ -1463,35 +1613,56 @@ const Jackpot = ({ user, isAuthenticated }) => {
     };
 
     // Game rolled LOW
-    const gameRolledLow = (winningTicketCalc, maxTicketCalc, AnimationDuration) => {
+    const gameRolledLow = (
+      winningTicketCalc,
+      maxTicketCalc,
+      AnimationDuration
+    ) => {
       // Update state
       const animation_duration = AnimationDuration / 1000;
       setJackpotAnimationDurationLow(animation_duration);
       setGameStatusLow(4);
 
-      const rotationDegree = getRotationDEGLow(winningTicketCalc, maxTicketCalc);
+      const rotationDegree = getRotationDEGLow(
+        winningTicketCalc,
+        maxTicketCalc
+      );
       setRotationLow(rotationDegree);
     };
 
     // Game rolled Middle
-    const gameRolledMiddle = (winningTicketCalc, maxTicketCalc, AnimationDuration) => {
+    const gameRolledMiddle = (
+      winningTicketCalc,
+      maxTicketCalc,
+      AnimationDuration
+    ) => {
       // Update state
       const animation_duration = AnimationDuration / 1000;
       setJackpotAnimationDurationMiddle(animation_duration);
       setGameStatusMiddle(4);
 
-      const rotationDegree = getRotationDEGMiddle(winningTicketCalc, maxTicketCalc);
+      const rotationDegree = getRotationDEGMiddle(
+        winningTicketCalc,
+        maxTicketCalc
+      );
       setRotationMiddle(rotationDegree);
     };
 
     // Game rolled High
-    const gameRolledHigh = (winningTicketCalc, maxTicketCalc, AnimationDuration) => {
+    const gameRolledHigh = (
+      winningTicketCalc,
+      maxTicketCalc,
+      AnimationDuration
+    ) => {
       // Update state
       const animation_duration = AnimationDuration / 1000;
       setJackpotAnimationDurationHigh(animation_duration);
       setGameStatusHigh(4);
 
-      const rotationDegree = getRotationDEGHigh(winningTicketCalc, maxTicketCalc);
+      const rotationDegree = getRotationDEGHigh(
+        winningTicketCalc,
+        maxTicketCalc
+      );
       setRotationHigh(rotationDegree);
     };
 
@@ -1518,7 +1689,11 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setStartCountdownHigh(false);
         }
         //LOW
-        if (type === "low" && schema.current.timeLeft / 1000 > 0 && schema.current.AnimationDuration / 1000 >= 10) {
+        if (
+          type === "low" &&
+          schema.current.timeLeft / 1000 > 0 &&
+          schema.current.AnimationDuration / 1000 >= 10
+        ) {
           setWaitTimeLow(schema.current.timeLeft / 1000);
         }
         if (schema.current.AnimationDuration / 1000 < 10) {
@@ -1526,7 +1701,11 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setStartCountdownLow(false);
         }
         //MIDDLE
-        if (type === "middle" && schema.currentMiddle.timeLeft / 1000 > 0 && schema.currentMiddle.AnimationDuration / 1000 >= 10) {
+        if (
+          type === "middle" &&
+          schema.currentMiddle.timeLeft / 1000 > 0 &&
+          schema.currentMiddle.AnimationDuration / 1000 >= 10
+        ) {
           setWaitTimeMiddle(schema.currentMiddle.timeLeft / 1000);
         }
         if (schema.currentMiddle.AnimationDuration / 1000 < 10) {
@@ -1534,7 +1713,11 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setStartCountdownMiddle(false);
         }
         //HIGH
-        if (type === "high" && schema.currentHigh.timeLeft / 1000 > 0 && schema.currentHigh.AnimationDuration / 1000 >= 10) {
+        if (
+          type === "high" &&
+          schema.currentHigh.timeLeft / 1000 > 0 &&
+          schema.currentHigh.AnimationDuration / 1000 >= 10
+        ) {
           setWaitTimeHigh(schema.currentHigh.timeLeft / 1000);
         }
         if (schema.currentHigh.AnimationDuration / 1000 < 10) {
@@ -1551,7 +1734,7 @@ const Jackpot = ({ user, isAuthenticated }) => {
     };
 
     // Fetch jackpot data from API Back From TAB
-    const fetchDataBACKfromTAB2 = async (type) => {
+    const fetchDataBACKfromTAB2 = async type => {
       //setLoading(true);
       //setLoadingMiddle(true);
       //setLoadingHigh(true);
@@ -1567,31 +1750,47 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setGameStatusLow(4);
           setWaitTimeLow(0);
           setStartCountdownLow(false);
-          if (schema.current.AnimationDuration / 1000 > 5.50) {
-            const rotationPercentCalc = schema.current.winningTicketCalc / schema.current.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) * (schema.current.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) - rotationDEGCalc
+          if (schema.current.AnimationDuration / 1000 > 5.5) {
+            const rotationPercentCalc =
+              schema.current.winningTicketCalc / schema.current.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 15) *
+              (schema.current.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 15 - rotationDEGCalc;
             setPieStartAngleLow(schema.current.pieStartAngle - pieDegreeCalc);
             setPieEndAngleLow(schema.current.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationLow(schema.current.AnimationDuration / 1000);
+            setJackpotAnimationDurationLow(
+              schema.current.AnimationDuration / 1000
+            );
             setRotationLow(rotationDEGCalc);
-          }
-          else if (schema.current.AnimationDuration / 1000 > 1.1) {
-            const rotationPercentCalc = schema.current.winningTicketCalc / schema.current.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) * (schema.current.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) - rotationDEGCalc
+          } else if (schema.current.AnimationDuration / 1000 > 1.1) {
+            const rotationPercentCalc =
+              schema.current.winningTicketCalc / schema.current.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 5) *
+              (schema.current.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 5 - rotationDEGCalc;
             setPieStartAngleLow(schema.current.pieStartAngle - pieDegreeCalc);
             setPieEndAngleLow(schema.current.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationLow(schema.current.AnimationDuration / 1000);
+            setJackpotAnimationDurationLow(
+              schema.current.AnimationDuration / 1000
+            );
             setRotationLow(rotationDEGCalc);
-          }
-          else {
-            const rotationPercentCalc = schema.current.winningTicketCalc / schema.current.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360) * (schema.current.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360) - rotationDEGCalc
+          } else {
+            const rotationPercentCalc =
+              schema.current.winningTicketCalc / schema.current.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360) *
+              (schema.current.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 - rotationDEGCalc;
             setPieStartAngleLow(schema.current.pieStartAngle - pieDegreeCalc);
             setPieEndAngleLow(schema.current.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationLow(schema.current.AnimationDuration / 1000);
+            setJackpotAnimationDurationLow(
+              schema.current.AnimationDuration / 1000
+            );
             setRotationLow(rotationDEGCalc);
           }
         }
@@ -1600,31 +1799,62 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setGameStatusMiddle(4);
           setWaitTimeMiddle(0);
           setStartCountdownMiddle(false);
-          if (schema.currentMiddle.AnimationDuration / 1000 > 5.50) {
-            const rotationPercentCalc = schema.currentMiddle.winningTicketCalc / schema.currentMiddle.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) * (schema.currentMiddle.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) - rotationDEGCalc
-            setPieStartAngleMiddle(schema.currentMiddle.pieStartAngle - pieDegreeCalc);
-            setPieEndAngleMiddle(schema.currentMiddle.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationMiddle(schema.currentMiddle.AnimationDuration / 1000);
+          if (schema.currentMiddle.AnimationDuration / 1000 > 5.5) {
+            const rotationPercentCalc =
+              schema.currentMiddle.winningTicketCalc /
+              schema.currentMiddle.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 15) *
+              (schema.currentMiddle.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 15 - rotationDEGCalc;
+            setPieStartAngleMiddle(
+              schema.currentMiddle.pieStartAngle - pieDegreeCalc
+            );
+            setPieEndAngleMiddle(
+              schema.currentMiddle.pieEndAngle - pieDegreeCalc
+            );
+            setJackpotAnimationDurationMiddle(
+              schema.currentMiddle.AnimationDuration / 1000
+            );
             setRotationMiddle(rotationDEGCalc);
-          }
-          else if (schema.currentMiddle.AnimationDuration / 1000 > 1.1) {
-            const rotationPercentCalc = schema.currentMiddle.winningTicketCalc / schema.currentMiddle.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) * (schema.currentMiddle.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) - rotationDEGCalc
-            setPieStartAngleMiddle(schema.currentMiddle.pieStartAngle - pieDegreeCalc);
-            setPieEndAngleMiddle(schema.currentMiddle.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationMiddle(schema.currentMiddle.AnimationDuration / 1000);
+          } else if (schema.currentMiddle.AnimationDuration / 1000 > 1.1) {
+            const rotationPercentCalc =
+              schema.currentMiddle.winningTicketCalc /
+              schema.currentMiddle.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 5) *
+              (schema.currentMiddle.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 5 - rotationDEGCalc;
+            setPieStartAngleMiddle(
+              schema.currentMiddle.pieStartAngle - pieDegreeCalc
+            );
+            setPieEndAngleMiddle(
+              schema.currentMiddle.pieEndAngle - pieDegreeCalc
+            );
+            setJackpotAnimationDurationMiddle(
+              schema.currentMiddle.AnimationDuration / 1000
+            );
             setRotationMiddle(rotationDEGCalc);
-          }
-          else {
-            const rotationPercentCalc = schema.currentMiddle.winningTicketCalc / schema.currentMiddle.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360) * (schema.currentMiddle.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360) - rotationDEGCalc
-            setPieStartAngleMiddle(schema.currentMiddle.pieStartAngle - pieDegreeCalc);
-            setPieEndAngleMiddle(schema.currentMiddle.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationMiddle(schema.currentMiddle.AnimationDuration / 1000);
+          } else {
+            const rotationPercentCalc =
+              schema.currentMiddle.winningTicketCalc /
+              schema.currentMiddle.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360) *
+              (schema.currentMiddle.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 - rotationDEGCalc;
+            setPieStartAngleMiddle(
+              schema.currentMiddle.pieStartAngle - pieDegreeCalc
+            );
+            setPieEndAngleMiddle(
+              schema.currentMiddle.pieEndAngle - pieDegreeCalc
+            );
+            setJackpotAnimationDurationMiddle(
+              schema.currentMiddle.AnimationDuration / 1000
+            );
             setRotationMiddle(rotationDEGCalc);
           }
         }
@@ -1633,31 +1863,56 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setGameStatusHigh(4);
           setWaitTimeHigh(0);
           setStartCountdownHigh(false);
-          if (schema.currentHigh.AnimationDuration / 1000 > 5.50) {
-            const rotationPercentCalc = schema.currentHigh.winningTicketCalc / schema.currentHigh.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) * (schema.currentHigh.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 15) - rotationDEGCalc
-            setPieStartAngleHigh(schema.currentHigh.pieStartAngle - pieDegreeCalc);
+          if (schema.currentHigh.AnimationDuration / 1000 > 5.5) {
+            const rotationPercentCalc =
+              schema.currentHigh.winningTicketCalc /
+              schema.currentHigh.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 15) *
+              (schema.currentHigh.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 15 - rotationDEGCalc;
+            setPieStartAngleHigh(
+              schema.currentHigh.pieStartAngle - pieDegreeCalc
+            );
             setPieEndAngleHigh(schema.currentHigh.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationHigh(schema.currentHigh.AnimationDuration / 1000);
+            setJackpotAnimationDurationHigh(
+              schema.currentHigh.AnimationDuration / 1000
+            );
             setRotationHigh(rotationDEGCalc);
-          }
-          else if (schema.currentHigh.AnimationDuration / 1000 > 1.1) {
-            const rotationPercentCalc = schema.currentHigh.winningTicketCalc / schema.currentHigh.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) * (schema.currentHigh.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360 * 5) - rotationDEGCalc
-            setPieStartAngleHigh(schema.currentHigh.pieStartAngle - pieDegreeCalc);
+          } else if (schema.currentHigh.AnimationDuration / 1000 > 1.1) {
+            const rotationPercentCalc =
+              schema.currentHigh.winningTicketCalc /
+              schema.currentHigh.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360 * 5) *
+              (schema.currentHigh.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 * 5 - rotationDEGCalc;
+            setPieStartAngleHigh(
+              schema.currentHigh.pieStartAngle - pieDegreeCalc
+            );
             setPieEndAngleHigh(schema.currentHigh.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationHigh(schema.currentHigh.AnimationDuration / 1000);
+            setJackpotAnimationDurationHigh(
+              schema.currentHigh.AnimationDuration / 1000
+            );
             setRotationHigh(rotationDEGCalc);
-          }
-          else {
-            const rotationPercentCalc = schema.currentHigh.winningTicketCalc / schema.currentHigh.maxTicketCalc;
-            const rotationDEGCalc = ((360 - 360 * rotationPercentCalc) + 360) * (schema.currentHigh.AnimationDuration / 10000);  // original: ((360 - 360 * rotationPercent) + 360 * 30)
-            const pieDegreeCalc = ((360 - 360 * rotationPercentCalc) + 360) - rotationDEGCalc
-            setPieStartAngleHigh(schema.currentHigh.pieStartAngle - pieDegreeCalc);
+          } else {
+            const rotationPercentCalc =
+              schema.currentHigh.winningTicketCalc /
+              schema.currentHigh.maxTicketCalc;
+            const rotationDEGCalc =
+              (360 - 360 * rotationPercentCalc + 360) *
+              (schema.currentHigh.AnimationDuration / 10000); // original: ((360 - 360 * rotationPercent) + 360 * 30)
+            const pieDegreeCalc =
+              360 - 360 * rotationPercentCalc + 360 - rotationDEGCalc;
+            setPieStartAngleHigh(
+              schema.currentHigh.pieStartAngle - pieDegreeCalc
+            );
             setPieEndAngleHigh(schema.currentHigh.pieEndAngle - pieDegreeCalc);
-            setJackpotAnimationDurationHigh(schema.currentHigh.AnimationDuration / 1000);
+            setJackpotAnimationDurationHigh(
+              schema.currentHigh.AnimationDuration / 1000
+            );
             setRotationHigh(rotationDEGCalc);
           }
         }
@@ -1767,15 +2022,24 @@ const Jackpot = ({ user, isAuthenticated }) => {
           setShowPointerHigh(true);
         }
         // LOW
-        if (schema.current.timeLeft / 1000 < 19 && schema.current.timeLeft / 1000 > 0) {
+        if (
+          schema.current.timeLeft / 1000 < 19 &&
+          schema.current.timeLeft / 1000 > 0
+        ) {
           fetchDataBACKfromTAB(schema, "low");
         }
         // MIDDLE
-        if (schema.currentMiddle.timeLeft / 1000 < 19 && schema.currentMiddle.timeLeft / 1000 > 0) {
+        if (
+          schema.currentMiddle.timeLeft / 1000 < 19 &&
+          schema.currentMiddle.timeLeft / 1000 > 0
+        ) {
           fetchDataBACKfromTAB(schema, "middle");
         }
         // HIGH
-        if (schema.currentHigh.timeLeft / 1000 < 19 && schema.currentHigh.timeLeft / 1000 > 0) {
+        if (
+          schema.currentHigh.timeLeft / 1000 < 19 &&
+          schema.currentHigh.timeLeft / 1000 > 0
+        ) {
           fetchDataBACKfromTAB(schema, "high");
         }
       } catch (error) {
@@ -1789,7 +2053,10 @@ const Jackpot = ({ user, isAuthenticated }) => {
         const schema = await getJackpotSchema();
 
         // LOW
-        if (schema.current.AnimationDuration / 1000 < 10 && schema.current.AnimationDuration / 1000 > 0) {
+        if (
+          schema.current.AnimationDuration / 1000 < 10 &&
+          schema.current.AnimationDuration / 1000 > 0
+        ) {
           setWaitTimeLow(0);
           setStartCountdownLow(false);
           setJackpotAnimationDurationLow(0);
@@ -1799,7 +2066,10 @@ const Jackpot = ({ user, isAuthenticated }) => {
           fetchDataBACKfromTAB2("low");
         }
         // MIDDLE
-        if (schema.currentMiddle.AnimationDuration / 1000 < 10 && schema.currentMiddle.AnimationDuration / 1000 > 0) {
+        if (
+          schema.currentMiddle.AnimationDuration / 1000 < 10 &&
+          schema.currentMiddle.AnimationDuration / 1000 > 0
+        ) {
           setWaitTimeMiddle(0);
           setStartCountdownMiddle(false);
           setJackpotAnimationDurationMiddle(0);
@@ -1809,7 +2079,10 @@ const Jackpot = ({ user, isAuthenticated }) => {
           fetchDataBACKfromTAB2("middle");
         }
         // HIGH
-        if (schema.currentHigh.AnimationDuration / 1000 < 10 && schema.currentHigh.AnimationDuration / 1000 > 0) {
+        if (
+          schema.currentHigh.AnimationDuration / 1000 < 10 &&
+          schema.currentHigh.AnimationDuration / 1000 > 0
+        ) {
           setWaitTimeHigh(0);
           setStartCountdownHigh(false);
           setJackpotAnimationDurationHigh(0);
@@ -1931,29 +2204,35 @@ const Jackpot = ({ user, isAuthenticated }) => {
     <Box className={classes.barContainer}>
       <Box className={classes.root}>
         <Container className={classes.rootContainer}>
-          <Box className={classes.logo}>
-
-          </Box>
+          <Box className={classes.logo}></Box>
           <Grid container>
             <Grow in timeout={820}>
               <Box className={classes.animation}>
                 <Box className={classes.animationHashHistory}>
                   <Tooltip
                     interactive
-                    title={
-                      <span>
-                        Check Game History
-                      </span>
-                    }
+                    title={<span>Check Game History</span>}
                     placement="bottom"
                   >
                     <Link
-                      style={{ textDecoration: "none", }}
+                      style={{ textDecoration: "none" }}
                       exact
                       to="/history"
                     >
-                      <Button disableRipple style={{ textDecoration: "none", }} className={classes.buttonhistoryicon}>
-                        <HistoryIcon style={{ color: "rgb(72, 82, 97)", cursor: "pointer", fontSize: "25px", marginRight: "-50px", marginBottom: "7px", }} />
+                      <Button
+                        disableRipple
+                        style={{ textDecoration: "none" }}
+                        className={classes.buttonhistoryicon}
+                      >
+                        <HistoryIcon
+                          style={{
+                            color: "rgb(72, 82, 97)",
+                            cursor: "pointer",
+                            fontSize: "25px",
+                            marginRight: "-50px",
+                            marginBottom: "7px",
+                          }}
+                        />
                       </Button>
                     </Link>
                   </Tooltip>
@@ -1961,20 +2240,38 @@ const Jackpot = ({ user, isAuthenticated }) => {
                     interactive
                     title={
                       <span>
-                        Round ID: {focusLowPot === true ? gameIdLow : focusMiddlePot === true ? gameIdMiddle : focusHighPot === true ? gameIdHigh : ""}
+                        Round ID:{" "}
+                        {focusLowPot === true
+                          ? gameIdLow
+                          : focusMiddlePot === true
+                          ? gameIdMiddle
+                          : focusHighPot === true
+                          ? gameIdHigh
+                          : ""}
                         <br />
-                        Private Hash: {focusLowPot === true ? privateHashLow : focusMiddlePot === true ? privateHashMiddle : focusHighPot === true ? privateHashHigh : ""}
+                        Private Hash:{" "}
+                        {focusLowPot === true
+                          ? privateHashLow
+                          : focusMiddlePot === true
+                          ? privateHashMiddle
+                          : focusHighPot === true
+                          ? privateHashHigh
+                          : ""}
                       </span>
                     }
                     placement="bottom"
                   >
-                    <p className={classes.hashvalue}><InfoOutlinedIcon /></p>
+                    <p className={classes.hashvalue}>
+                      <InfoOutlinedIcon />
+                    </p>
                   </Tooltip>
                 </Box>
                 <Box
                   className={potSizeLow}
                   onClick={onClickFocusLow}
-                  style={{ cursor: focusLowPot === false ? "pointer" : "default", }}
+                  style={{
+                    cursor: focusLowPot === false ? "pointer" : "default",
+                  }}
                 >
                   {showPointerLow === true ? (
                     <Box className={classes.jackpotPointerLow}></Box>
@@ -1983,13 +2280,18 @@ const Jackpot = ({ user, isAuthenticated }) => {
                   )}
                   <Box className={classes.jackpotCenterLow}>
                     <p className={classes.jackpotTextPotLow}>FISH</p>
-                    <p className={classes.jackpotTextValueLow}>{PotTitleCheckLow()}</p>
+                    <p className={classes.jackpotTextValueLow}>
+                      {PotTitleCheckLow()}
+                    </p>
                     <p className={classes.jackpotTextSizeLow}>0,1 - 5</p>
                   </Box>
                   {loading ? (
                     <Box></Box>
                   ) : (
-                    <Box className={classes.jackpotCenterCircleLow} style={{ display: hideTimerLow, }}>
+                    <Box
+                      className={classes.jackpotCenterCircleLow}
+                      style={{ display: hideTimerLow }}
+                    >
                       <CountdownCircleTimer
                         size={244}
                         isPlaying={startCountDownLow === false ? false : true}
@@ -2002,23 +2304,26 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         onComplete={() => {
                           // do your stuff here
                           setShowPointerLow(true);
-                          return { shouldRepeat: false, } // repeat animation false
+                          return { shouldRepeat: false }; // repeat animation false
                         }}
-                      >
-                      </CountdownCircleTimer>
-                    </Box>)}
+                      ></CountdownCircleTimer>
+                    </Box>
+                  )}
                   <Box
-                    style={gameStatusLow === 4 ?
-                      {
-                        transform: `rotate(${rotationLow}deg)`,
-                        WebkitTransform: `rotate(${rotationLow}deg)`,
-                        transition: `transform ${jackpotAnimationDurationLow}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
-                      } : {
-                        transform: `rotate(${rotationLow}deg)`,
-                        WebkitTransform: `rotate(${rotationLow}deg)`,
-                        transition: `transform ${jackpotAnimationDurationLow}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
-                      }
-                    }>
+                    style={
+                      gameStatusLow === 4
+                        ? {
+                            transform: `rotate(${rotationLow}deg)`,
+                            WebkitTransform: `rotate(${rotationLow}deg)`,
+                            transition: `transform ${jackpotAnimationDurationLow}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
+                          }
+                        : {
+                            transform: `rotate(${rotationLow}deg)`,
+                            WebkitTransform: `rotate(${rotationLow}deg)`,
+                            transition: `transform ${jackpotAnimationDurationLow}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
+                          }
+                    }
+                  >
                     <PieChart width={398} height={398}>
                       <Pie
                         data={CheckFunctionLow()}
@@ -2033,18 +2338,27 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         paddingAngle={0}
                         dataKey="winningPercentage"
                         blendStroke
-                        label={focusLowPot === true ? renderCustomizedLabelLow : ""}
+                        label={
+                          focusLowPot === true ? renderCustomizedLabelLow : ""
+                        }
                         labelLine={false}
                       >
-                        {
-                          dataPieLow.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={pieCOLORS[index]}
-                              style={{
-                                opacity: index === winnerINDEXLow && showWinnerTitleLow === true ? 1 : index !== winnerINDEXLow && showWinnerTitleLow === true ? 0.6 : 1
-                              }}
-                            />
-                          ))
-                        }
+                        {dataPieLow.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={pieCOLORS[index]}
+                            style={{
+                              opacity:
+                                index === winnerINDEXLow &&
+                                showWinnerTitleLow === true
+                                  ? 1
+                                  : index !== winnerINDEXLow &&
+                                    showWinnerTitleLow === true
+                                  ? 0.6
+                                  : 1,
+                            }}
+                          />
+                        ))}
                       </Pie>
                     </PieChart>
                   </Box>
@@ -2052,7 +2366,9 @@ const Jackpot = ({ user, isAuthenticated }) => {
                 <Box
                   className={potSizeMiddle}
                   onClick={onClickFocusMiddle}
-                  style={{ cursor: focusMiddlePot === false ? "pointer" : "default", }}
+                  style={{
+                    cursor: focusMiddlePot === false ? "pointer" : "default",
+                  }}
                 >
                   {showPointerMiddle === true ? (
                     <Box className={classes.jackpotPointerMiddle}></Box>
@@ -2061,16 +2377,23 @@ const Jackpot = ({ user, isAuthenticated }) => {
                   )}
                   <Box className={classes.jackpotCenterMiddle}>
                     <p className={classes.jackpotTextPotMiddle}>SHARK</p>
-                    <p className={classes.jackpotTextValueMiddle}>{PotTitleCheckMiddle()}</p>
+                    <p className={classes.jackpotTextValueMiddle}>
+                      {PotTitleCheckMiddle()}
+                    </p>
                     <p className={classes.jackpotTextSizeMiddle}>1 - 25</p>
                   </Box>
                   {loadingMiddle ? (
                     <Box></Box>
                   ) : (
-                    <Box className={classes.jackpotCenterCircleMiddle} style={{ display: hideTimerMiddle, }}>
+                    <Box
+                      className={classes.jackpotCenterCircleMiddle}
+                      style={{ display: hideTimerMiddle }}
+                    >
                       <CountdownCircleTimer
                         size={244}
-                        isPlaying={startCountDownMiddle === false ? false : true}
+                        isPlaying={
+                          startCountDownMiddle === false ? false : true
+                        }
                         duration={timerDurationMiddle}
                         initialRemainingTime={waitTimeMiddle}
                         strokeWidth={4}
@@ -2080,23 +2403,26 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         onComplete={() => {
                           // do your stuff here
                           setShowPointerMiddle(true);
-                          return { shouldRepeat: false, } // repeat animation false
+                          return { shouldRepeat: false }; // repeat animation false
                         }}
-                      >
-                      </CountdownCircleTimer>
-                    </Box>)}
+                      ></CountdownCircleTimer>
+                    </Box>
+                  )}
                   <Box
-                    style={gameStatusMiddle === 4 ?
-                      {
-                        transform: `rotate(${rotationMiddle}deg)`,
-                        WebkitTransform: `rotate(${rotationMiddle}deg)`,
-                        transition: `transform ${jackpotAnimationDurationMiddle}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
-                      } : {
-                        transform: `rotate(${rotationMiddle}deg)`,
-                        WebkitTransform: `rotate(${rotationMiddle}deg)`,
-                        transition: `transform ${jackpotAnimationDurationMiddle}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
-                      }
-                    }>
+                    style={
+                      gameStatusMiddle === 4
+                        ? {
+                            transform: `rotate(${rotationMiddle}deg)`,
+                            WebkitTransform: `rotate(${rotationMiddle}deg)`,
+                            transition: `transform ${jackpotAnimationDurationMiddle}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
+                          }
+                        : {
+                            transform: `rotate(${rotationMiddle}deg)`,
+                            WebkitTransform: `rotate(${rotationMiddle}deg)`,
+                            transition: `transform ${jackpotAnimationDurationMiddle}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
+                          }
+                    }
+                  >
                     <PieChart width={398} height={398}>
                       <Pie
                         data={CheckFunctionMiddle()}
@@ -2111,18 +2437,29 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         paddingAngle={0}
                         dataKey="winningPercentage"
                         blendStroke
-                        label={focusMiddlePot === true ? renderCustomizedLabelMiddle : ""}
+                        label={
+                          focusMiddlePot === true
+                            ? renderCustomizedLabelMiddle
+                            : ""
+                        }
                         labelLine={false}
                       >
-                        {
-                          dataPieMiddle.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={pieCOLORS[index]}
-                              style={{
-                                opacity: index === winnerINDEXMiddle && showWinnerTitleMiddle === true ? 1 : index !== winnerINDEXMiddle && showWinnerTitleMiddle === true ? 0.6 : 1
-                              }}
-                            />
-                          ))
-                        }
+                        {dataPieMiddle.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={pieCOLORS[index]}
+                            style={{
+                              opacity:
+                                index === winnerINDEXMiddle &&
+                                showWinnerTitleMiddle === true
+                                  ? 1
+                                  : index !== winnerINDEXMiddle &&
+                                    showWinnerTitleMiddle === true
+                                  ? 0.6
+                                  : 1,
+                            }}
+                          />
+                        ))}
                       </Pie>
                     </PieChart>
                   </Box>
@@ -2130,7 +2467,9 @@ const Jackpot = ({ user, isAuthenticated }) => {
                 <Box
                   className={potSizeHigh}
                   onClick={onClickFocusHigh}
-                  style={{ cursor: focusHighPot === false ? "pointer" : "default", }}
+                  style={{
+                    cursor: focusHighPot === false ? "pointer" : "default",
+                  }}
                 >
                   {showPointerHigh === true ? (
                     <Box className={classes.jackpotPointerHigh}></Box>
@@ -2139,13 +2478,18 @@ const Jackpot = ({ user, isAuthenticated }) => {
                   )}
                   <Box className={classes.jackpotCenterHigh}>
                     <p className={classes.jackpotTextPotHigh}>WHALE</p>
-                    <p className={classes.jackpotTextValueHigh}>{PotTitleCheckHigh()}</p>
+                    <p className={classes.jackpotTextValueHigh}>
+                      {PotTitleCheckHigh()}
+                    </p>
                     <p className={classes.jackpotTextSizeHigh}>10 - 5,000</p>
                   </Box>
                   {loadingHigh ? (
                     <Box></Box>
                   ) : (
-                    <Box className={classes.jackpotCenterCircleHigh} style={{ display: hideTimerHigh, }}>
+                    <Box
+                      className={classes.jackpotCenterCircleHigh}
+                      style={{ display: hideTimerHigh }}
+                    >
                       <CountdownCircleTimer
                         size={244}
                         isPlaying={startCountDownHigh === false ? false : true}
@@ -2158,23 +2502,26 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         onComplete={() => {
                           // do your stuff here
                           setShowPointerHigh(true);
-                          return { shouldRepeat: false, } // repeat animation false
+                          return { shouldRepeat: false }; // repeat animation false
                         }}
-                      >
-                      </CountdownCircleTimer>
-                    </Box>)}
+                      ></CountdownCircleTimer>
+                    </Box>
+                  )}
                   <Box
-                    style={gameStatusHigh === 4 ?
-                      {
-                        transform: `rotate(${rotationHigh}deg)`,
-                        WebkitTransform: `rotate(${rotationHigh}deg)`,
-                        transition: `transform ${jackpotAnimationDurationHigh}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
-                      } : {
-                        transform: `rotate(${rotationHigh}deg)`,
-                        WebkitTransform: `rotate(${rotationHigh}deg)`,
-                        transition: `transform ${jackpotAnimationDurationHigh}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
-                      }
-                    }>
+                    style={
+                      gameStatusHigh === 4
+                        ? {
+                            transform: `rotate(${rotationHigh}deg)`,
+                            WebkitTransform: `rotate(${rotationHigh}deg)`,
+                            transition: `transform ${jackpotAnimationDurationHigh}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
+                          }
+                        : {
+                            transform: `rotate(${rotationHigh}deg)`,
+                            WebkitTransform: `rotate(${rotationHigh}deg)`,
+                            transition: `transform ${jackpotAnimationDurationHigh}s cubic-bezier(0.000, 0.440, 0.385, 1.000)`,
+                          }
+                    }
+                  >
                     <PieChart width={398} height={398}>
                       <Pie
                         data={CheckFunctionHigh()}
@@ -2189,18 +2536,27 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         paddingAngle={0}
                         dataKey="winningPercentage"
                         blendStroke
-                        label={focusHighPot === true ? renderCustomizedLabelHigh : ""}
+                        label={
+                          focusHighPot === true ? renderCustomizedLabelHigh : ""
+                        }
                         labelLine={false}
                       >
-                        {
-                          dataPieHigh.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={pieCOLORS[index]}
-                              style={{
-                                opacity: index === winnerINDEXHigh && showWinnerTitleHigh === true ? 1 : index !== winnerINDEXHigh && showWinnerTitleHigh === true ? 0.6 : 1
-                              }}
-                            />
-                          ))
-                        }
+                        {dataPieHigh.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={pieCOLORS[index]}
+                            style={{
+                              opacity:
+                                index === winnerINDEXHigh &&
+                                showWinnerTitleHigh === true
+                                  ? 1
+                                  : index !== winnerINDEXHigh &&
+                                    showWinnerTitleHigh === true
+                                  ? 0.6
+                                  : 1,
+                            }}
+                          />
+                        ))}
                       </Pie>
                     </PieChart>
                   </Box>
@@ -2216,14 +2572,14 @@ const Jackpot = ({ user, isAuthenticated }) => {
                       className={classes.slidertest}
                       styles={{
                         track: {
-                          backgroundColor: '#5f6368',
+                          backgroundColor: "#5f6368",
                           height: "3px",
                           marginTop: "17px",
                           width: "113px",
                           touchAction: "none",
                         },
                         active: {
-                          backgroundColor: '#ebebeb'
+                          backgroundColor: "#ebebeb",
                         },
                         thumb: {
                           width: 14,
@@ -2233,11 +2589,26 @@ const Jackpot = ({ user, isAuthenticated }) => {
                       axis="x"
                       xstep={0.1}
                       xmin={0.1}
-                      xmax={isAuthenticated && user.wallet > 5 ? 5 : isAuthenticated && user.wallet < 5 ? user.wallet : 5}
+                      xmax={
+                        isAuthenticated && user.wallet > 5
+                          ? 5
+                          : isAuthenticated && user.wallet < 5
+                          ? user.wallet
+                          : 5
+                      }
                       x={betAmountLow}
-                      onChange={({ x }) => setBetAmountLow(parseFloat(x.toFixed(0)) + ".00")}
+                      onChange={({ x }) =>
+                        setBetAmountLow(parseFloat(x.toFixed(0)) + ".00")
+                      }
                     />
-                    <p className={classes.sliderWrapperText2}>MAX: {isAuthenticated && user.wallet > 5 ? "5" : isAuthenticated && user.wallet < 5 ? user.wallet.toFixed(2) : "5"}</p>
+                    <p className={classes.sliderWrapperText2}>
+                      MAX:{" "}
+                      {isAuthenticated && user.wallet > 5
+                        ? "5"
+                        : isAuthenticated && user.wallet < 5
+                        ? user.wallet.toFixed(2)
+                        : "5"}
+                    </p>
                   </Box>
                   <BetInput
                     label=""
@@ -2249,7 +2620,17 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         <InputAdornment
                           className={classes.inputIcon}
                           style={{
-                            color: !isAuthenticated ? "#ffffff" : playersLow.map(player => player._id).includes(user._id) && isAuthenticated ? pieCOLORS[playersLow.findIndex(player => player._id === user._id)] : "#707479"
+                            color: !isAuthenticated
+                              ? "#ffffff"
+                              : playersLow
+                                  .map(player => player._id)
+                                  .includes(user._id) && isAuthenticated
+                              ? pieCOLORS[
+                                  playersLow.findIndex(
+                                    player => player._id === user._id
+                                  )
+                                ]
+                              : "#707479",
                           }}
                           position="start"
                         >
@@ -2276,14 +2657,30 @@ const Jackpot = ({ user, isAuthenticated }) => {
                     {playersLow.map((player, index) => (
                       <Collapse key={index}>
                         <Box className={classes.smallBet}>
-                          <Avatar src={player.avatar} variant="rounded" className={classes.avatar2}
-                            style={{ borderRadius: "50%", border: `3px solid ${pieCOLORS[index]}`, filter: `drop-shadow(0 0 3px ${pieCOLORS[index]})`, }} />
+                          <Avatar
+                            src={player.avatar}
+                            variant="rounded"
+                            className={classes.avatar2}
+                            style={{
+                              borderRadius: "50%",
+                              border: `3px solid ${pieCOLORS[index]}`,
+                              filter: `drop-shadow(0 0 3px ${pieCOLORS[index]})`,
+                            }}
+                          />
                           <Tooltip
                             interactive
                             title={
                               <span>
-                                <h5 style={{ fontSize: "10px", fontFamily: "Rubik", fontWeight: 200, margin: "0px", }}>
-                                  Winning Chance: <span style={{ marginLeft: "3px", }}>%</span>
+                                <h5
+                                  style={{
+                                    fontSize: "10px",
+                                    fontFamily: "Rubik",
+                                    fontWeight: 200,
+                                    margin: "0px",
+                                  }}
+                                >
+                                  Winning Chance:{" "}
+                                  <span style={{ marginLeft: "3px" }}>%</span>
                                   {player.winningPercentage.toFixed(2)}{" "}
                                 </h5>
                               </span>
@@ -2293,15 +2690,28 @@ const Jackpot = ({ user, isAuthenticated }) => {
                             <Box className={classes.betInfo}>
                               <span
                                 style={{ background: player.level.levelColor }}
-                                className={classes.userlevel}>{player.level.name}</span>
-                              <h3 style={{ color: "#e4e4e4", cursor: "pointer", }}>
+                                className={classes.userlevel}
+                              >
+                                {player.level.name}
+                              </span>
+                              <h3
+                                style={{ color: "#e4e4e4", cursor: "pointer" }}
+                              >
                                 {player.username}
                               </h3>
                             </Box>
                           </Tooltip>
-                          <Box style={{ margin: "auto", marginRight: "15px", display: "flex", }}>
+                          <Box
+                            style={{
+                              margin: "auto",
+                              marginRight: "15px",
+                              display: "flex",
+                            }}
+                          >
                             <h5>
-                              <span style={{ color: `${pieCOLORS[index]}`, }}>$</span>
+                              <span style={{ color: `${pieCOLORS[index]}` }}>
+                                $
+                              </span>
                               {player.betAmount.toFixed(2)}{" "}
                             </h5>
                           </Box>
@@ -2320,14 +2730,14 @@ const Jackpot = ({ user, isAuthenticated }) => {
                       className={classes.slidertest}
                       styles={{
                         track: {
-                          backgroundColor: '#5f6368',
+                          backgroundColor: "#5f6368",
                           height: "3px",
                           marginTop: "17px",
                           width: "115px",
                           touchAction: "none",
                         },
                         active: {
-                          backgroundColor: '#ebebeb'
+                          backgroundColor: "#ebebeb",
                         },
                         thumb: {
                           width: 14,
@@ -2337,11 +2747,26 @@ const Jackpot = ({ user, isAuthenticated }) => {
                       axis="x"
                       xstep={0.5}
                       xmin={1}
-                      xmax={isAuthenticated && user && user.wallet > 25 ? 25 : isAuthenticated && user && user.wallet < 25 ? user.wallet : 25}
+                      xmax={
+                        isAuthenticated && user && user.wallet > 25
+                          ? 25
+                          : isAuthenticated && user && user.wallet < 25
+                          ? user.wallet
+                          : 25
+                      }
                       x={betAmountMiddle}
-                      onChange={({ x }) => setBetAmountMiddle(parseFloat(x.toFixed(0)) + ".00")}
+                      onChange={({ x }) =>
+                        setBetAmountMiddle(parseFloat(x.toFixed(0)) + ".00")
+                      }
                     />
-                    <p className={classes.sliderWrapperText2}>MAX: {isAuthenticated && user && user.wallet > 25 ? "25" : isAuthenticated && user && user.wallet < 25 ? user.wallet.toFixed(2) : "25"}</p>
+                    <p className={classes.sliderWrapperText2}>
+                      MAX:{" "}
+                      {isAuthenticated && user && user.wallet > 25
+                        ? "25"
+                        : isAuthenticated && user && user.wallet < 25
+                        ? user.wallet.toFixed(2)
+                        : "25"}
+                    </p>
                   </Box>
                   <BetInput
                     label=""
@@ -2353,7 +2778,19 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         <InputAdornment
                           className={classes.inputIcon}
                           style={{
-                            color: !isAuthenticated ? "#ffffff" : isAuthenticated && user && playersMiddle.map(player => player._id).includes(user._id) ? pieCOLORS[playersMiddle.findIndex(player => player._id === user._id)] : "#707479"
+                            color: !isAuthenticated
+                              ? "#ffffff"
+                              : isAuthenticated &&
+                                user &&
+                                playersMiddle
+                                  .map(player => player._id)
+                                  .includes(user._id)
+                              ? pieCOLORS[
+                                  playersMiddle.findIndex(
+                                    player => player._id === user._id
+                                  )
+                                ]
+                              : "#707479",
                           }}
                           position="start"
                         >
@@ -2380,14 +2817,30 @@ const Jackpot = ({ user, isAuthenticated }) => {
                     {playersMiddle.map((player, index) => (
                       <Collapse key={index}>
                         <Box className={classes.smallBet}>
-                          <Avatar src={player.avatar} variant="rounded" className={classes.avatar2}
-                            style={{ borderRadius: "50%", border: `3px solid ${pieCOLORS[index]}`, filter: `drop-shadow(0 0 3px ${pieCOLORS[index]})`, }} />
+                          <Avatar
+                            src={player.avatar}
+                            variant="rounded"
+                            className={classes.avatar2}
+                            style={{
+                              borderRadius: "50%",
+                              border: `3px solid ${pieCOLORS[index]}`,
+                              filter: `drop-shadow(0 0 3px ${pieCOLORS[index]})`,
+                            }}
+                          />
                           <Tooltip
                             interactive
                             title={
                               <span>
-                                <h5 style={{ fontSize: "10px", fontFamily: "Rubik", fontWeight: 200, margin: "0px", }}>
-                                  Winning Chance: <span style={{ marginLeft: "3px", }}>%</span>
+                                <h5
+                                  style={{
+                                    fontSize: "10px",
+                                    fontFamily: "Rubik",
+                                    fontWeight: 200,
+                                    margin: "0px",
+                                  }}
+                                >
+                                  Winning Chance:{" "}
+                                  <span style={{ marginLeft: "3px" }}>%</span>
                                   {player.winningPercentage.toFixed(2)}{" "}
                                 </h5>
                               </span>
@@ -2397,15 +2850,28 @@ const Jackpot = ({ user, isAuthenticated }) => {
                             <Box className={classes.betInfo}>
                               <span
                                 style={{ background: player.level.levelColor }}
-                                className={classes.userlevel}>{player.level.name}</span>
-                              <h3 style={{ color: "#e4e4e4", cursor: "pointer", }}>
+                                className={classes.userlevel}
+                              >
+                                {player.level.name}
+                              </span>
+                              <h3
+                                style={{ color: "#e4e4e4", cursor: "pointer" }}
+                              >
                                 {player.username}
                               </h3>
                             </Box>
                           </Tooltip>
-                          <Box style={{ margin: "auto", marginRight: "15px", display: "flex", }}>
+                          <Box
+                            style={{
+                              margin: "auto",
+                              marginRight: "15px",
+                              display: "flex",
+                            }}
+                          >
                             <h5>
-                              <span style={{ color: `${pieCOLORS[index]}`, }}>$</span>
+                              <span style={{ color: `${pieCOLORS[index]}` }}>
+                                $
+                              </span>
                               {player.betAmount.toFixed(2)}{" "}
                             </h5>
                           </Box>
@@ -2424,14 +2890,14 @@ const Jackpot = ({ user, isAuthenticated }) => {
                       className={classes.slidertest}
                       styles={{
                         track: {
-                          backgroundColor: '#5f6368',
+                          backgroundColor: "#5f6368",
                           height: "3px",
                           marginTop: "17px",
                           width: "93px",
                           touchAction: "none",
                         },
                         active: {
-                          backgroundColor: '#ebebeb'
+                          backgroundColor: "#ebebeb",
                         },
                         thumb: {
                           width: 14,
@@ -2441,11 +2907,26 @@ const Jackpot = ({ user, isAuthenticated }) => {
                       axis="x"
                       xstep={1}
                       xmin={10}
-                      xmax={isAuthenticated && user.wallet > 5000 ? 5000 : isAuthenticated && user.wallet < 5000 ? user.wallet : 5000}
+                      xmax={
+                        isAuthenticated && user.wallet > 5000
+                          ? 5000
+                          : isAuthenticated && user.wallet < 5000
+                          ? user.wallet
+                          : 5000
+                      }
                       x={betAmountHigh}
-                      onChange={({ x }) => setBetAmountHigh(parseFloat(x.toFixed(0)) + ".00")}
+                      onChange={({ x }) =>
+                        setBetAmountHigh(parseFloat(x.toFixed(0)) + ".00")
+                      }
                     />
-                    <p className={classes.sliderWrapperText2}>MAX: {isAuthenticated && user.wallet > 5000 ? "5000" : isAuthenticated && user.wallet < 5000 ? user.wallet.toFixed(2) : "5000"}</p>
+                    <p className={classes.sliderWrapperText2}>
+                      MAX:{" "}
+                      {isAuthenticated && user.wallet > 5000
+                        ? "5000"
+                        : isAuthenticated && user.wallet < 5000
+                        ? user.wallet.toFixed(2)
+                        : "5000"}
+                    </p>
                   </Box>
                   <BetInput
                     label=""
@@ -2457,7 +2938,17 @@ const Jackpot = ({ user, isAuthenticated }) => {
                         <InputAdornment
                           className={classes.inputIcon}
                           style={{
-                            color: !isAuthenticated ? "#ffffff" : playersHigh.map(player => player._id).includes(user._id) && isAuthenticated ? pieCOLORS[playersHigh.findIndex(player => player._id === user._id)] : "#707479"
+                            color: !isAuthenticated
+                              ? "#ffffff"
+                              : playersHigh
+                                  .map(player => player._id)
+                                  .includes(user._id) && isAuthenticated
+                              ? pieCOLORS[
+                                  playersHigh.findIndex(
+                                    player => player._id === user._id
+                                  )
+                                ]
+                              : "#707479",
                           }}
                           position="start"
                         >
@@ -2484,14 +2975,30 @@ const Jackpot = ({ user, isAuthenticated }) => {
                     {playersHigh.map((player, index) => (
                       <Collapse key={index}>
                         <Box className={classes.smallBet}>
-                          <Avatar src={player.avatar} variant="rounded" className={classes.avatar2}
-                            style={{ borderRadius: "50%", border: `3px solid ${pieCOLORS[index]}`, filter: `drop-shadow(0 0 3px ${pieCOLORS[index]})`, }} />
+                          <Avatar
+                            src={player.avatar}
+                            variant="rounded"
+                            className={classes.avatar2}
+                            style={{
+                              borderRadius: "50%",
+                              border: `3px solid ${pieCOLORS[index]}`,
+                              filter: `drop-shadow(0 0 3px ${pieCOLORS[index]})`,
+                            }}
+                          />
                           <Tooltip
                             interactive
                             title={
                               <span>
-                                <h5 style={{ fontSize: "10px", fontFamily: "Rubik", fontWeight: 200, margin: "0px", }}>
-                                  Winning Chance: <span style={{ marginLeft: "3px", }}>%</span>
+                                <h5
+                                  style={{
+                                    fontSize: "10px",
+                                    fontFamily: "Rubik",
+                                    fontWeight: 200,
+                                    margin: "0px",
+                                  }}
+                                >
+                                  Winning Chance:{" "}
+                                  <span style={{ marginLeft: "3px" }}>%</span>
                                   {player.winningPercentage.toFixed(2)}{" "}
                                 </h5>
                               </span>
@@ -2501,15 +3008,28 @@ const Jackpot = ({ user, isAuthenticated }) => {
                             <Box className={classes.betInfo}>
                               <span
                                 style={{ background: player.level.levelColor }}
-                                className={classes.userlevel}>{player.level.name}</span>
-                              <h3 style={{ color: "#e4e4e4", cursor: "pointer", }}>
+                                className={classes.userlevel}
+                              >
+                                {player.level.name}
+                              </span>
+                              <h3
+                                style={{ color: "#e4e4e4", cursor: "pointer" }}
+                              >
                                 {player.username}
                               </h3>
                             </Box>
                           </Tooltip>
-                          <Box style={{ margin: "auto", marginRight: "15px", display: "flex", }}>
+                          <Box
+                            style={{
+                              margin: "auto",
+                              marginRight: "15px",
+                              display: "flex",
+                            }}
+                          >
                             <h5>
-                              <span style={{ color: `${pieCOLORS[index]}`, }}>$</span>
+                              <span style={{ color: `${pieCOLORS[index]}` }}>
+                                $
+                              </span>
                               {player.betAmount.toFixed(2)}{" "}
                             </h5>
                           </Box>
@@ -2523,7 +3043,7 @@ const Jackpot = ({ user, isAuthenticated }) => {
           </Grid>
         </Container>
       </Box>
-    </Box >
+    </Box>
   );
 };
 
