@@ -82,12 +82,12 @@ const useStyles = makeStyles(theme => ({
       marginLeft: 0,
       marginRight: "auto",
     },
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      marginTop: "5px",
-      marginLeft: 0,
-      marginRight: "auto",
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   display: "flex",
+    //   marginTop: "5px",
+    //   marginLeft: 0,
+    //   marginRight: "auto",
+    // },
   },
   mobileNav2: {
     display: "none",
@@ -105,12 +105,12 @@ const useStyles = makeStyles(theme => ({
       marginLeft: "auto",
       marginRight: 0,
     },
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      marginTop: "5px",
-      marginLeft: "auto",
-      marginRight: 0,
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   display: "flex",
+    //   marginTop: "5px",
+    //   marginLeft: "auto",
+    //   marginRight: 0,
+    // },
   },
   logoimage: {
     outline: "none",
@@ -135,10 +135,10 @@ const useStyles = makeStyles(theme => ({
       display: "flex",
       justifyContent: "center",
     },
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      justifyContent: "center",
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   display: "flex",
+    //   justifyContent: "center",
+    // },
   },
   mobileNavTest: {
     display: "none",
@@ -151,7 +151,7 @@ const useStyles = makeStyles(theme => ({
     border: "1px solid #E7721C",
     color: "#E7741B",
     display: "flex",
-    width: "100%",
+    // width: "100%",
     height: 50,
     flexShrink: 0,
     textTransform: "capitalize !important",
@@ -163,7 +163,7 @@ const useStyles = makeStyles(theme => ({
 
   paper: {
     position: "absolute",
-    width: 400,
+    width: 20,
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
@@ -229,7 +229,7 @@ const Navbar = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "center",
+          // justifyContent: "center",
           gap: "2%",
           margin: "2%",
         }}

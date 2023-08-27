@@ -30,7 +30,7 @@ export default function CasinoUITest() {
   const classes = useStyles();
 
   return (
-    <div style={{ margin: "2%", marginTop: "4%" }}>
+    <div style={{}}>
       <SwipeableTextMobileStepper />
       <div className={classes.paper}>
         <Paper elevation={0} component={imageComponent} />
