@@ -192,7 +192,7 @@ const useStyles = makeStyles(theme => ({
       marginRight: "160px",
     },
     [theme.breakpoints.down("md")]: {
-      marginRight: "160px",
+      // marginRight: "160px",
     },
     "&:hover": {
       backgroundColor: "#29363d",

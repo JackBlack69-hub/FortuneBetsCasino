@@ -95,13 +95,13 @@ const useStyles = makeStyles(theme => ({
       borderRight: "0px solid #12191d",
       width: 0,
     },
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "90px",
-      position: "absolute",
-      overflow: "scroll",
-      borderRight: "0px solid #12191d",
-      width: 0,
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   paddingTop: "90px",
+    //   position: "absolute",
+    //   overflow: "scroll",
+    //   borderRight: "0px solid #12191d",
+    //   width: 0,
+    // },
   },
   drawerPaper2: {
     marginTop: "20%",
@@ -134,14 +134,14 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
       height: 0,
     },
-    [theme.breakpoints.down("md")]: {
-      position: "absolute",
-      overflow: "scroll",
-      borderLeft: "0px solid #12191d",
-      borderTop: "0px",
-      width: "100%",
-      height: 0,
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   position: "absolute",
+    //   overflow: "scroll",
+    //   borderLeft: "0px solid #12191d",
+    //   borderTop: "0px",
+    //   width: "100%",
+    //   height: 0,
+    // },
   },
   mobileDrawer1: {
     transition: "all 0.5s ease-in-out",
