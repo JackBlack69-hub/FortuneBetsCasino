@@ -1,14 +1,5 @@
 import React from "react";
-import Casino_rectangle from "../../assets/Casino_rectangle.png";
 import { makeStyles } from "@material-ui/core/styles";
-import Casino_coins from "../../assets/Casino_coins.png";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles({
   container: {
@@ -40,7 +31,7 @@ const useStyles = makeStyles({
     top: "45%",
     left: "20%",
     transform: "translate(-50%, -50%)",
-    width: "26%", 
+    width: "26%",
     height: "auto",
     zIndex: 1,
   },
@@ -50,34 +41,31 @@ const useStyles = makeStyles({
   },
   textField1: {
     color: "white",
-    fontSize: "1.3vw", 
-    fontWeight: 600,
+    fontSize: "0.8vw",
+    fontWeight: 400,
     fontFamily: "Rubik",
   },
   textField2: {
     color: "white",
     lineHeight: "normal",
-    fontSize: "3vw", 
+    fontSize: "2.6vw",
     fontWeight: 600,
     fontFamily: "Rubik",
-    marginBottom:10,
-    marginTop:-20,
-    // marginBottom: "1vw",
-    // marginTop: "-2vw", 
-    width: "100%",
+    marginBottom: 3,
+    marginTop: -20,
     height: "auto",
   },
   button: {
     width: "65%",
-    height: "2.7vw", 
-    borderRadius: 10, 
-    fontSize: "1.2vw", 
+    height: "2.7vw",
+    borderRadius: 10,
+    fontSize: "1.2vw",
     fontFamily: "Arial, sans-serif",
-    border: "0.15vw solid #fff", 
+    border: "0.15vw solid #fff",
     position: "relative",
     overflow: "hidden",
     zIndex: 1,
-    boxShadow: "0 0.3vw 0.6vw rgba(0, 0, 0, 0.1)", 
+    boxShadow: "0 0.3vw 0.6vw rgba(0, 0, 0, 0.1)",
     backgroundColor: "transparent",
     color: "#fff",
     cursor: "pointer",
@@ -85,31 +73,27 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-export default function CasinoUI() {
+export default function CasinoUI(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
       <img
         className={classes.rectangleImage}
-        src={Casino_rectangle}
+        src={props.rectangleImage}
         alt="Casino Rectangle"
       />
       <div className={classes.textContainer}>
         <div className={classes.textFitter}>
-          <p className={classes.textField1}>Sign Up & Get Reward</p>
-          <p className={classes.textField2}>Up to 500$</p>
-          <button className={classes.button}>Get Started!</button>
+          <p className={classes.textField1}>{props.textField1}</p>
+          <p className={classes.textField2}>{props.textField2}</p>
+          <button className={classes.button}>{props.buttonText}</button>
         </div>
       </div>
       <div className={classes.coinContainer}>
         <img
           className={classes.coinsImage}
-          src={Casino_coins}
+          src={props.coinsImage}
           alt="Casino Coins"
         />
       </div>
