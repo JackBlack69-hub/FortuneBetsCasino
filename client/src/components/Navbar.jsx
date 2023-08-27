@@ -12,10 +12,13 @@ import ChatIcon from "@material-ui/icons/Chat";
 import MenuIcon from "@material-ui/icons/Menu";
 import InputBase from "@material-ui/core/InputBase";
 import Modal from "@material-ui/core/Modal";
+import TextField from "@material-ui/core/TextField";
 
 //import Toolbar from "@material-ui/core/Toolbar";
 
 import logo from "../assets/testlogo1.png";
+import metamaskIcon from "../assets/metamask.png";
+import googleIcon from "../assets/google.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -172,6 +175,27 @@ const useStyles = makeStyles(theme => ({
       color: "#FFF",
       textAlign: "center",
     },
+    "& .MuiTextField-root": {
+      margin: "2%",
+      background: "#021E2C",
+      borderRadius: 10,
+      zIndex: 1000000000000000,
+
+      "& label": {
+        border: "none",
+        color: "#787685",
+      },
+    },
+  },
+
+  text1: {
+    color: "rgba(255, 255, 255, 0.50)",
+    fontFamily: "Rubik",
+    fontSize: "13px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "normal",
+    margin: "2%",
   },
 }));
 
@@ -222,7 +246,92 @@ const Navbar = ({
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title">Create Account</h2>
       <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+        <form noValidate autoComplete="off">
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Email"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Username"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <TextField
+            id="outlined-basic"
+            label="Password"
+            variant="outlined"
+            style={{ width: 240 }}
+          />
+          <TextField
+            id="outlined-basic"
+            label="Repeat-Password"
+            variant="outlined"
+            style={{ width: 240 }}
+          />
+        </form>
+        <div className={classes.text1}>
+          I agree and understand the Terms & Conditions
+        </div>
+        <div
+          style={{
+            textAlign: "center",
+            borderRadius: "10px",
+            border: "1px solid #FFF",
+            marginBottom: "3%",
+          }}
+        >
+          <Button
+            variant="outlined"
+            style={{ color: "#fff", textTransform: "capitalize" }}
+          >
+            Play Now
+          </Button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flexEnd",
+            paddingTop: "4%",
+            borderTop: "2px solid #002D47",
+          }}
+        >
+          <Button
+            variant="outlined"
+            style={{
+              color: "#fff",
+              textTransform: "capitalize",
+              borderRadius: "10px",
+              border: "1px solid #FFF",
+            }}
+          >
+            Sign Up with MetaMask <img src={metamaskIcon}></img>
+          </Button>
+          <Button
+            variant="outlined"
+            style={{
+              color: "#fff",
+              textTransform: "capitalize",
+              borderRadius: "10px",
+              border: "1px solid #FFF",
+            }}
+          >
+            Sign Up with Google <img src={googleIcon}></img>
+          </Button>
+        </div>
+        <div className={classes.text1}>
+          Already have an account? <b style={{ color: "#fff" }}>Sign In</b>
+        </div>
+        <div className={classes.text1}>
+          fortunebets is protected by reCaptcha. Privacy Policy and Terms of
+          Service apply.
+        </div>
       </p>
     </div>
   );

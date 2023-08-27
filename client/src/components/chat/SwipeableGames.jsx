@@ -13,36 +13,9 @@ import Casino_coins from "../../assets/Casino_coins.png";
 import Casino_rectangle from "../../assets/Casino_rectangle.png";
 import Casino2 from "../../assets/Casino2.png";
 import poker_table from "../../assets/Poker_table.png";
+import jackpotImage from "../../assets/games-jackpot.png";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const tutorialSteps = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath:
-      "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Bird",
-    imgPath:
-      "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
-  },
-  {
-    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
-    imgPath:
-      "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-];
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -58,13 +31,34 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     width: "100%",
   },
+  paper: {
+    display: "flex",
+    flexWrap: "wrap",
+
+    "& > *": {
+      margin: theme.spacing(3),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
 }));
 
-function SwipeableTextMobileStepper() {
+export function imageComponent() {
+  return (
+    <>
+      <img
+        src={jackpotImage}
+        style={{ paddingLeft: "2%", paddingRight: "2%" }}
+      ></img>
+    </>
+  );
+}
+
+function SwipeableGames() {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tutorialSteps.length;
+  const maxSteps = 2;
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -86,30 +80,59 @@ function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        <CasinoUI
-          rectangleImage={Casino_rectangle}
-          coinsImage={Casino_coins}
-          textField1="Sign Up & Get Reward"
-          textField2="Up to 500$"
-          buttonText="Get Started!"
-        />
-        <CasinoUI
-          rectangleImage={Casino2}
-          coinsImage={poker_table}
-          textField1="Watch & Bet"
-          textField2="Poker Night"
-          buttonText="Watch Live"
-        />
+        <div>
+          <Paper component={imageComponent} style={classes.paper} />
+
+          <Paper component={imageComponent} style={classes.paper} />
+
+          <Paper component={imageComponent} style={classes.paper} />
+        </div>
+        <div>
+          <Paper component={imageComponent} style={classes.paper} />
+          <Paper component={imageComponent} style={classes.paper} />
+
+          <Paper component={imageComponent} style={classes.paper} />
+        </div>
       </AutoPlaySwipeableViews>
+
       <MobileStepper
-        style={{ justifyContent: "center" }}
+        style={{ justifyContent: "flex-end", gap: 2 }}
         className={classes.root}
         steps={maxSteps}
         position="static"
+        variant={null}
         activeStep={activeStep}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            style={{ color: "white" }}
+            disabled={activeStep === maxSteps - 1}
+          >
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button
+            style={{ color: "white" }}
+            size="small"
+            onClick={handleBack}
+            disabled={activeStep === 0}
+          >
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+          </Button>
+        }
       />
     </div>
   );
 }
 
-export default SwipeableTextMobileStepper;
+export default SwipeableGames;

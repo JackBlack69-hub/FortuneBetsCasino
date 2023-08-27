@@ -5,6 +5,7 @@ import SwipeableTextMobileStepper from "./SwipeableTextMobileStepper";
 import BasicTable from "./BasicTable";
 import { Paper } from "@material-ui/core";
 import jackpotImage from "../../assets/games-jackpot.png";
+import SwipeableGames from "./SwipeableGames";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -18,27 +19,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export function imageComponent() {
-  return (
-    <>
-      <img src={jackpotImage}></img>
-    </>
-  );
-}
-
 export default function CasinoUITest() {
   const classes = useStyles();
 
   return (
     <div style={{}}>
       <SwipeableTextMobileStepper />
-      <div className={classes.paper}>
-        <Paper elevation={0} component={imageComponent} />
-        <Paper component={imageComponent} />
-        <Paper component={imageComponent} />
-        <Paper component={imageComponent} />
-        <Paper component={imageComponent} elevation={4} />
-      </div>
+      <SwipeableGames />
       <BasicTable />
     </div>
   );
