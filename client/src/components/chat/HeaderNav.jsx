@@ -42,6 +42,7 @@ import chartIcon from "../../assets/chartIcon.png";
 import twitterIcon from "../../assets/twitterIcon.png";
 import moneyBagIcon from "../../assets/moneyBag.png";
 import withdrawIcon from "../../assets/withdrawIcon.png";
+import NewDepositModal from "../modals/deposit/NewDepositModal";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -668,10 +669,15 @@ const HeaderNav = ({
   const [vipData, setVipData] = useState(null);
   const [vipDataColor, setVipDataColor] = useState(null);
   const [flagWithdraw, setFlagWithdraw] = useState(false);
-
-  const handleWithdrawFlag = () => {
-    setFlagWithdraw(!flagWithdraw);
-  };
+  const [flagDeposit, setFlagDeposit] = useState(false);
+  const handleWithdrawFlag = React.useCallback(() => {
+    console.log("yes");
+    setFlagWithdraw(flagWithdraw => !flagWithdraw);
+  }, [flagWithdraw]);
+  const handleDepositFlag = React.useCallback(() => {
+    console.log("yes");
+    setFlagDeposit(flagDeposit => !flagDeposit);
+  }, [flagDeposit]);
 
   //const openMobile = Boolean(mbAnchorEl);
 
@@ -740,7 +746,16 @@ const HeaderNav = ({
         open={openFree}
         code={affiliateCode}
       />
-      <div className={classes.mobileNavTest} style={{ display: "flex",backgroundColor:'#021E2C',borderRadius:20,margin:15,marginTop:30 }}>
+      <div
+        className={classes.mobileNavTest}
+        style={{
+          display: "flex",
+          backgroundColor: "#021E2C",
+          borderRadius: 20,
+          margin: 15,
+          marginTop: 30,
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -748,7 +763,7 @@ const HeaderNav = ({
             flexDirection: "column",
           }}
         >
-          <div style={{ display: "flex", alignSelf: "flex-start", }}>
+          <div style={{ display: "flex", alignSelf: "flex-start" }}>
             <a
               className={classes.logoimage}
               href="https://fortunebets.xyz/"
@@ -1326,6 +1341,7 @@ const HeaderNav = ({
 
           <Button
             variant="outlined"
+            onClick={handleDepositFlag}
             style={{
               color: "#fff",
               textTransform: "capitalize",
@@ -1338,6 +1354,7 @@ const HeaderNav = ({
             <img src={moneyBagIcon} />
             Deposit
           </Button>
+          <NewDepositModal flag={flagDeposit} />
         </div>
 
         <br />

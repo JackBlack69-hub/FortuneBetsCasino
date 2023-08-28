@@ -519,76 +519,90 @@ const Navbar = ({
 
   return (
     <AppBar position="static" className={classes.root}>
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", marginLeft: -30 }}>
-  <InputBase
-    placeholder="Search games..."
-    style={{
-      color: "white",
-      width: "20%",
-      padding: "13px 15px 9px 50px",
-      alignItems: "center",
-      borderRadius: "10px",
-      backgroundColor: '#021E2C',
-      backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\'%3E%3Ccircle cx=\'11\' cy=\'11\' r=\'7\' stroke=\'white\' stroke-opacity=\'0.7\' stroke-width=\'2\'/%3E%3Cpath d=\'M20 20L17 17\' stroke=\'white\' stroke-opacity=\'0.7\' stroke-width=\'2\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
-      backgroundPosition: "10px center",
-      backgroundRepeat: "no-repeat",
-      margin: 26,
-      marginLeft:400
-    }}
-    inputProps={{ "aria-label": "search" }}
-  />
-  <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 10 }}>
-    <Button
-      variant="outlined"
-      onClick={handleOpen}
-      className={classes.buttonNavbar}
-      style={{
-        background: "linear-gradient(134deg, #E7741B 0%, #DA1F2A 100%)",
-        color: "#fff",
-        borderRadius: 10,
-        width: 197
-      }}
-    >
-      Sign In
-    </Button>
-    <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
-    >
-      {bodySignIN}
-    </Modal>
-    <Button
-      onClick={handleDepositOpen}
-      variant="outlined"
-      className={classes.buttonNavbar}
-      style={{ width: 167, borderRadius: 10 }}
-    >
-      Buy Crypto
-    </Button>
-    <Modal
-      open={openDeposit}
-      onClose={handleDepositClose}
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
-    >
-      {bodyDeposit}
-    </Modal>
-    <InputBase
-      placeholder="Another Input..."
-      style={{
-        color: "white",
-        padding: "8px 10px",
-        borderRadius: "10px",
-        backgroundColor: '#021E2C',
-        marginLeft: "150px", 
-      }}
-      inputProps={{ "aria-label": "search" }}
-    />
-</div>
-
-</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          marginLeft: -30,
+        }}
+      >
+        <InputBase
+          placeholder="Search games..."
+          style={{
+            color: "white",
+            width: "20%",
+            padding: "13px 15px 9px 50px",
+            alignItems: "center",
+            borderRadius: "10px",
+            backgroundColor: "#021E2C",
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='7' stroke='white' stroke-opacity='0.7' stroke-width='2'/%3E%3Cpath d='M20 20L17 17' stroke='white' stroke-opacity='0.7' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E\")",
+            backgroundPosition: "10px center",
+            backgroundRepeat: "no-repeat",
+            margin: 26,
+            marginLeft: 400,
+          }}
+          inputProps={{ "aria-label": "search" }}
+        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 10,
+          }}
+        >
+          <Button
+            variant="outlined"
+            onClick={handleOpen}
+            className={classes.buttonNavbar}
+            style={{
+              background: "linear-gradient(134deg, #E7741B 0%, #DA1F2A 100%)",
+              color: "#fff",
+              borderRadius: 10,
+              width: 197,
+            }}
+          >
+            Sign In
+          </Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            {bodySignIN}
+          </Modal>
+          <Button
+            onClick={handleDepositOpen}
+            variant="outlined"
+            className={classes.buttonNavbar}
+            style={{ width: 167, borderRadius: 10 }}
+          >
+            Buy Crypto
+          </Button>
+          <Modal
+            open={openDeposit}
+            onClose={handleDepositClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            {bodyDeposit}
+          </Modal>
+          <InputBase
+            placeholder="Another Input..."
+            style={{
+              color: "white",
+              padding: "8px 10px",
+              borderRadius: "10px",
+              backgroundColor: "#021E2C",
+              marginLeft: "150px",
+            }}
+            inputProps={{ "aria-label": "search" }}
+          />
+        </div>
+      </div>
 
       <Box className={classes.boxmenu}>
         <Box className={classes.mobileNav1}>

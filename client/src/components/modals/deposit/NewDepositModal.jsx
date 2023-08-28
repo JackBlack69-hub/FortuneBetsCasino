@@ -54,13 +54,13 @@ function getModalStyle() {
   };
 }
 
-export default function WithdrawModal(props) {
+export default function NewDepositModal(props) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title" style={{ marginBottom: 0, paddingBottom: 0 }}>
-        Withdraw $FORTUNE
+        Deposit $FORTUNE
       </h2>
       <p
         className={classes.text1}
@@ -73,28 +73,30 @@ export default function WithdrawModal(props) {
           className={classes.text1}
           style={{ color: "#fff", paddingBottom: "3%" }}
         >
-          Are you happy with the amount you won and want to withdraw? Amazing,
-          please input the amount of tokens you want to withdraw and the public
-          address you want to withdraw to. Let us take care of the rest.
+          Want to deposit some funds to start playing? Just send it over onto
+          this address and we will credit your account with the appropriate
+          amount. Enjoy our casino!
         </div>
+
         <form noValidate autoComplete="off">
-          <TextField
-            id="outlined-basic"
-            label="Amount"
-            variant="outlined"
-            style={{ width: 240 }}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Total Balance: 549.873 $FORTUNE"
-            variant="outlined"
-            style={{ width: 240 }}
-            className={classes.inputText}
-          />
           <div>
+            <p className={classes.text1} style={{ color: "#fff" }}>
+              Crypto Deposit Address:{" "}
+            </p>
             <TextField
               id="outlined-basic"
-              label="Your Address Here: 0x..."
+              label="0x094988598D3Af7081Ebfe532852fD4d3d993B8A9"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div>
+            <p className={classes.text1} style={{ color: "#fff" }}>
+              Redeem Coupon Code:
+            </p>
+            <TextField
+              id="outlined-basic"
+              label="Enter your coupon code"
               variant="outlined"
               style={{ width: 500 }}
             />
@@ -112,7 +114,7 @@ export default function WithdrawModal(props) {
               style={{ color: "#fff", textTransform: "capitalize" }}
             >
               <img src={moneyBagIcon} />
-              Withdraw
+              Redeem Code
             </Button>
           </div>
         </form>
