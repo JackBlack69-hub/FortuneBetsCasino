@@ -75,7 +75,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     fontFamily: "Rubik",
     background: "#001724",
-    border: "1px solid white",
+    // border: "1px solid white",
     position: "relative",
     whiteSpace: "nowrap",
     width: 280,
@@ -111,7 +111,7 @@ const useStyles = makeStyles(theme => ({
     overflow: "auto",
     flexDirection: "column",
     fontFamily: "Rubik",
-    border: "1px solid white",
+    // border: "1px solid white",
     borderRight: "0px",
     position: "relative",
     whiteSpace: "nowrap",
@@ -206,7 +206,7 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
 
-    border: "1px solid white",
+    // border: "1px solid white",
     overflow: "auto",
     fontFamily: "Rubik",
   },

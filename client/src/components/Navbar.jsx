@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 
     display: "flex",
     textAlign: "center",
-    border: "1px solid white",
+    // border: "1px solid white",
     width: "100% !important",
 
     // height: "10px",
@@ -452,71 +452,6 @@ const Navbar = ({
     </div>
   );
 
-  const bodyDeposit = (
-    <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title" style={{ marginBottom: 0, paddingBottom: 0 }}>
-        Deposit $FORTUNE
-      </h2>
-      <p
-        className={classes.text1}
-        style={{ textAlign: "center", marginTop: 0, marginBottom: "4%" }}
-      >
-        Base Mainnet
-      </p>
-      <p id="simple-modal-description">
-        <div
-          className={classes.text1}
-          style={{ color: "#fff", paddingBottom: "3%" }}
-        >
-          Want to deposit some funds to start playing? Just send it over onto
-          this address and we will credit your account with the appropriate
-          amount. Enjoy our casino!
-        </div>
-
-        <form noValidate autoComplete="off">
-          <div>
-            <p className={classes.text1} style={{ color: "#fff" }}>
-              Crypto Deposit Address:{" "}
-            </p>
-            <TextField
-              id="outlined-basic"
-              label="0x094988598D3Af7081Ebfe532852fD4d3d993B8A9"
-              variant="outlined"
-              style={{ width: 500 }}
-            />
-          </div>
-          <div>
-            <p className={classes.text1} style={{ color: "#fff" }}>
-              Redeem Coupon Code:
-            </p>
-            <TextField
-              id="outlined-basic"
-              label="Enter your coupon code"
-              variant="outlined"
-              style={{ width: 500 }}
-            />
-          </div>
-          <div
-            style={{
-              textAlign: "center",
-              borderRadius: "10px",
-              border: "1px solid #FFF",
-              marginBottom: "3%",
-            }}
-          >
-            <Button
-              variant="outlined"
-              style={{ color: "#fff", textTransform: "capitalize" }}
-            >
-              <img src={moneyBagIcon} />
-              Redeem Code
-            </Button>
-          </div>
-        </form>
-      </p>
-    </div>
-  );
-
   return (
     <AppBar position="static" className={classes.root}>
       <div
@@ -582,14 +517,7 @@ const Navbar = ({
           >
             Buy Crypto
           </Button>
-          <Modal
-            open={openDeposit}
-            onClose={handleDepositClose}
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-          >
-            {bodyDeposit}
-          </Modal>
+
           <InputBase
             placeholder="Another Input..."
             style={{
