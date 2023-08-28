@@ -7,7 +7,7 @@ import SunIcon from "../../assets/Sun.svg";
 
 const MarketPrices = () => {
   return (
-    <div style={{ border: "1px solid white" }}>
+    <div>
       <Grid style={{ padding: "4%" }} container xs={12}>
         <Grid
           style={{
@@ -48,7 +48,16 @@ const MarketPrices = () => {
           </Box>
         </Grid>
       </Grid>
-      <div style={{ overflow: "scroll", height: "300px" }}>
+      <div
+        style={{
+          overflow: "scroll",
+          height: "300px",
+          boxShadow: "0px 0px 40px 0px #001119 inset",
+
+          background:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 17, 25, 0.8))",
+        }}
+      >
         <MarketData />
         <MarketData />
         <MarketData />
@@ -56,7 +65,7 @@ const MarketPrices = () => {
         <MarketData />
         <MarketData />
       </div>
-      <div style={{ border: "1px solid white" }}>
+      <div>
         <Grid
           container
           style={{
