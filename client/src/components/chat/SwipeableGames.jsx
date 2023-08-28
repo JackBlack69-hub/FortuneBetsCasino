@@ -1,140 +1,83 @@
-import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import MobileStepper from "@material-ui/core/MobileStepper";
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
-import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+import React, { useRef } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom"; // Import Link from React Router
 import jackpotImage from "../../assets/games-jackpot.png";
 import coinflipCard from "../../assets/coinflip.png";
 import crashCard from "../../assets/crashImg.png";
 import rouletteCard from "../../assets/rouletteCard.png";
 import plinkoCard from "../../assets/plinkoCard.png";
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const useStyles = makeStyles(theme => ({
+const images = [jackpotImage, coinflipCard, crashCard, rouletteCard, plinkoCard];
+
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "100%",
     background: "inherit",
     margin: "2%",
   },
-  paper: {
-    display: "flex",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(3),
-      width: theme.spacing(16),
-      height: theme.spacing(16),
-    },
-  },
   header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: theme.spacing(2),
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  imagesContainer: {
+    display: "flex",
+    overflowX: "scroll",
+  },
+  image: {
+    width: "200px",
+    height: "270px",
+    marginRight: "20px",
+  },
+  buttonContainer: {
+    display: "flex",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "transparent",
+    border: "none",
+    fontSize: "24px",
+    color: "#fff",
+    cursor: "pointer",
+    marginLeft: "10px",
   },
 }));
 
-export function imageComponent(imageName) {
-  return (
-    <img
-      src={imageName}
-      style={{ paddingLeft: "2%", paddingRight: "2%" }}
-      alt="Jackpot"
-    />
-  );
-}
-
-function SwipeableGames() {
+const HorizontalImageList = () => {
   const classes = useStyles();
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = 2;
+  const imagesContainerRef = useRef(null);
 
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+  const handleScroll = (scrollAmount) => {
+    if (imagesContainerRef.current) {
+      const newScrollLeft = imagesContainerRef.current.scrollLeft + scrollAmount * 220;
+      imagesContainerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <div className={classes.root}>
       <div className={classes.header}>
         <h1 style={{ color: "#fff", fontWeight: 400 }}>Games</h1>
-        <MobileStepper
-          style={{ backgroundColor: "transparent" }}
-          steps={maxSteps}
-          position="static"
-          variant={null}
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              style={{ color: "rgba(255, 255, 255, 0.5)" }}
-              disabled={activeStep === maxSteps - 1}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              style={{ color: "rgba(255, 255, 255, 0.5)" }}
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-            </Button>
-          }
-        />
+        <div className={classes.buttonContainer}>
+          <button onClick={() => handleScroll(-1)} className={classes.button}>&lt;</button>
+          <button onClick={() => handleScroll(1)} className={classes.button}>&gt;</button>
+        </div>
       </div>
-
-      <SwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={setActiveStep}
-        enableMouseEvents
-      >
-        <div>
-          <Paper
-            component={() => imageComponent(jackpotImage)}
-            className={classes.paper}
-          />
-          <Paper
-            component={() => imageComponent(coinflipCard)}
-            className={classes.paper}
-          />
-          <Paper
-            component={() => imageComponent(crashCard)}
-            className={classes.paper}
-          />
-        </div>
-        <div>
-          <Paper
-            component={() => imageComponent(rouletteCard)}
-            className={classes.paper}
-          />
-          <Paper
-            component={() => imageComponent(plinkoCard)}
-            className={classes.paper}
-          />
-        </div>
-      </SwipeableViews>
+      <div className={classes.imagesContainer} ref={imagesContainerRef}>
+        {images.map((image, index) => (
+          <Link key={index} to={`/Crash`}>
+            {/* Use "/Jackpot" for the jackpot image, otherwise use `/game/${index}` */}
+            <img src={image} alt={`Image ${index}`} className={classes.image} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default SwipeableGames;
+export default HorizontalImageList;
