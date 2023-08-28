@@ -740,7 +740,7 @@ const HeaderNav = ({
         open={openFree}
         code={affiliateCode}
       />
-      <div className={classes.mobileNavTest} style={{ display: "flex" }}>
+      <div className={classes.mobileNavTest} style={{ display: "flex",backgroundColor:'#021E2C',borderRadius:20,margin:15,marginTop:30 }}>
         <div
           style={{
             display: "flex",
@@ -748,7 +748,7 @@ const HeaderNav = ({
             flexDirection: "column",
           }}
         >
-          <div style={{ display: "flex", alignSelf: "flex-start" }}>
+          <div style={{ display: "flex", alignSelf: "flex-start", }}>
             <a
               className={classes.logoimage}
               href="https://fortunebets.xyz/"
