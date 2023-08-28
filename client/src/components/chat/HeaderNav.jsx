@@ -9,6 +9,7 @@ import { logout } from "../../actions/auth";
 import parseCommasToThousands from "../../utils/parseCommasToThousands";
 import cutDecimalPoints from "../../utils/cutDecimalPoints";
 import { getUserVipData } from "../../services/api.service";
+import CasinoUITest from "./CasinoUITest";
 
 //components
 import Toolbar from "@material-ui/core/Toolbar";
@@ -802,35 +803,38 @@ const HeaderNav = ({
       </div>
 
       <br />
+      
+      <Link to="/CasinoUITest">
+        <Button styles={{ display: "flex", flexDirection: "row" }}>
+          <div
+            className="casino"
+            style={{
+              color: "#fff",
+              fontFamily: "Rubik",
+              fontSize: "18px",
+              fontWeight: 400,
+              marginTop: 5,
+              paddingRight: 10,
+              paddingLeft: 18,
+            }}
+          >
+            <img src={Casino} alt="" />
+          </div>
 
-      <Button styles={{ display: "flex", flexDirection: "row" }}>
-        <div
-          className="casino"
-          style={{
-            color: "#fff",
-            fontFamily: "Rubik",
-            fontSize: "18px",
-            fontWeight: 400,
-            marginTop: 5,
-            paddingRight: 10,
-            paddingLeft: 18,
-          }}
-        >
-          <img src={Casino} alt="" />
-        </div>
-
-        <div
-          className="casino"
-          style={{
-            color: "#fff",
-            fontFamily: "Rubik",
-            fontSize: "18px",
-            fontWeight: 400,
-          }}
-        >
-          <span>Casino</span>
-        </div>
-      </Button>
+          <div
+            className="casino"
+            style={{
+              color: "#fff",
+              fontFamily: "Rubik",
+              fontSize: "18px",
+              fontWeight: 400,
+            }}
+          >
+            <span>Casino</span>
+          </div>
+        </Button>
+      </Link>
+      
 
       <br />
       <Box

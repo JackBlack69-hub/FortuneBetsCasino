@@ -346,7 +346,7 @@ const App = () => {
                 />
 
                 <Route exact path="/jackpot" component={Jackpot} />
-                <Route exact path="/CasinoUI" component={CasinoUITest} />
+                <Route exact path="/CasinoUITest" component={CasinoUITest} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/affiliates" component={Affiliates} />
                 <Route exact path="/roulette" component={Roulette} />
