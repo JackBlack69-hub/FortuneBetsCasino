@@ -517,69 +517,6 @@ const Navbar = ({
     </div>
   );
 
-  const bodyWithdraw = (
-    <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title" style={{ marginBottom: 0, paddingBottom: 0 }}>
-        Withdraw $FORTUNE
-      </h2>
-      <p
-        className={classes.text1}
-        style={{ textAlign: "center", marginTop: 0, marginBottom: "4%" }}
-      >
-        Base Mainnet
-      </p>
-      <p id="simple-modal-description">
-        <div
-          className={classes.text1}
-          style={{ color: "#fff", paddingBottom: "3%" }}
-        >
-          Are you happy with the amount you won and want to withdraw? Amazing,
-          please input the amount of tokens you want to withdraw and the public
-          address you want to withdraw to. Let us take care of the rest.
-        </div>
-        <form noValidate autoComplete="off">
-          <TextField
-            id="outlined-basic"
-            label="Amount"
-            variant="outlined"
-            style={{ width: 240 }}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Total Balance: 549.873 $FORTUNE"
-            variant="outlined"
-            style={{ width: 240 }}
-            className={classes.inputText}
-          />
-          <div>
-            <TextField
-              id="outlined-basic"
-              label="Your Address Here: 0x..."
-              variant="outlined"
-              style={{ width: 500 }}
-            />
-          </div>
-          <div
-            style={{
-              textAlign: "center",
-              borderRadius: "10px",
-              border: "1px solid #FFF",
-              marginBottom: "3%",
-            }}
-          >
-            <Button
-              variant="outlined"
-              style={{ color: "#fff", textTransform: "capitalize" }}
-            >
-              <img src={moneyBagIcon} />
-              Withdraw
-            </Button>
-          </div>
-        </form>
-      </p>
-    </div>
-  );
-
   return (
     <AppBar position="static" className={classes.root}>
       <Box
@@ -645,7 +582,7 @@ const Navbar = ({
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
           >
-            {bodyWithdraw}
+            {/* {bodyWithdraw} */}
           </Modal>
         </div>
         <div className={classes.paper2} style={{ width: "20%" }}>

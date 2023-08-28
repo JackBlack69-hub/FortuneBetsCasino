@@ -10,6 +10,7 @@ import parseCommasToThousands from "../../utils/parseCommasToThousands";
 import cutDecimalPoints from "../../utils/cutDecimalPoints";
 import { getUserVipData } from "../../services/api.service";
 import CasinoUITest from "./CasinoUITest";
+import WithdrawModal from "../modals/withdraw/WithdrawModal";
 
 //components
 import Toolbar from "@material-ui/core/Toolbar";
@@ -29,6 +30,7 @@ import Market from "../modals/MarketModal";
 import Deposit from "../modals/DepositModal";
 import Vip from "../modals/VIPModal";
 import Free from "../modals/FreeModal";
+import Modal from "@material-ui/core/Modal";
 
 // import logo from "../../assets/testlogo1.png";
 import logoImage from "../../assets/logoImage.png";
@@ -38,6 +40,8 @@ import gitbookIcon from "../../assets/gitbookIcon.png";
 import contractIcon from "../../assets/contractIcon.png";
 import chartIcon from "../../assets/chartIcon.png";
 import twitterIcon from "../../assets/twitterIcon.png";
+import moneyBagIcon from "../../assets/moneyBag.png";
+import withdrawIcon from "../../assets/withdrawIcon.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -663,6 +667,12 @@ const HeaderNav = ({
   const [affiliateCode, setAffiliateCode] = useState(null);
   const [vipData, setVipData] = useState(null);
   const [vipDataColor, setVipDataColor] = useState(null);
+  const [flagWithdraw, setFlagWithdraw] = useState(false);
+
+  const handleWithdrawFlag = () => {
+    setFlagWithdraw(!flagWithdraw);
+  };
+
   //const openMobile = Boolean(mbAnchorEl);
 
   // If user has clicked affiliate link
@@ -1286,6 +1296,50 @@ const HeaderNav = ({
             </Button>
           </div>
         </a>
+
+        <div
+          style={{
+            margin: "6%",
+
+            alignItems: "right",
+            display: "flex",
+            justifyContent: "center",
+            gap: "7px",
+          }}
+        >
+          <Button
+            variant="outlined"
+            onClick={handleWithdrawFlag}
+            style={{
+              color: "#fff",
+              textTransform: "capitalize",
+              border: "1px solid #FFF",
+              padding: "3%",
+              paddingRight: "2%",
+              paddingLeft: "2%",
+              borderRadius: "10px",
+            }}
+          >
+            <img src={withdrawIcon} />
+          </Button>
+          <WithdrawModal flag={flagWithdraw} />
+
+          <Button
+            variant="outlined"
+            style={{
+              color: "#fff",
+              textTransform: "capitalize",
+              width: 196,
+              border: "1px solid #FFF",
+              padding: "3%",
+              borderRadius: "10px",
+            }}
+          >
+            <img src={moneyBagIcon} />
+            Deposit
+          </Button>
+        </div>
+
         <br />
         <Box className={classes.root}>
           {isLoading ? (
