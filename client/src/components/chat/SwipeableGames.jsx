@@ -8,10 +8,10 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import jackpotImage from "../../assets/games-jackpot.png";
-import tableCrash from "../../assets/tableCrash.png";
-
-import tableRoullete from "../../assets/tableRoullete.png";
-
+import coinflipCard from "../../assets/coinflip.png";
+import crashCard from "../../assets/crashImg.png";
+import rouletteCard from "../../assets/rouletteCard.png";
+import plinkoCard from "../../assets/plinkoCard.png";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles(theme => ({
@@ -114,17 +114,21 @@ function SwipeableGames() {
             className={classes.paper}
           />
           <Paper
-            component={() => imageComponent(tableCrash)}
+            component={() => imageComponent(coinflipCard)}
             className={classes.paper}
           />
           <Paper
-            component={() => imageComponent(tableRoullete)}
+            component={() => imageComponent(crashCard)}
             className={classes.paper}
           />
         </div>
         <div>
           <Paper
-            component={() => imageComponent(jackpotImage)}
+            component={() => imageComponent(rouletteCard)}
+            className={classes.paper}
+          />
+          <Paper
+            component={() => imageComponent(plinkoCard)}
             className={classes.paper}
           />
         </div>

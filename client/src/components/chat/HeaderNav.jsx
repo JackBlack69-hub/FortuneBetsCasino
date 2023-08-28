@@ -34,6 +34,10 @@ import Free from "../modals/FreeModal";
 import logoImage from "../../assets/logoImage.png";
 import Casino from "../../assets/Casino.png";
 import Futures_Trading from "../../assets/Futures_Trading.png";
+import gitbookIcon from "../../assets/gitbookIcon.png";
+import contractIcon from "../../assets/contractIcon.png";
+import chartIcon from "../../assets/chartIcon.png";
+import twitterIcon from "../../assets/twitterIcon.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -446,10 +450,14 @@ const useStyles = makeStyles(theme => ({
     textTransform: "none",
   },
   reverse2: {
-    display: "flex",
-    alignItems: "left",
+    display: "flex !important",
+    justifyContent: "left",
     textTransform: "capitalize",
-    textAlign: "left",
+    "& img": {
+      paddingRight: "4%",
+      color: "#fff",
+      opacity: "1 !important",
+    },
   },
   login: {
     display: "flex",
@@ -803,7 +811,7 @@ const HeaderNav = ({
       </div>
 
       <br />
-      
+
       <Link to="/CasinoUITest">
         <Button styles={{ display: "flex", flexDirection: "row" }}>
           <div
@@ -834,7 +842,6 @@ const HeaderNav = ({
           </div>
         </Button>
       </Link>
-      
 
       <br />
       <Box
@@ -1226,23 +1233,7 @@ const HeaderNav = ({
             className={classes.subPoker}
           >
             <Button disableRipple className={classes.reverse2}>
-              <svg
-                style={{
-                  fontSize: "12px",
-                  marginRight: "10px",
-                  marginLeft: "-110px",
-                }}
-                width="12"
-                height="13"
-                viewBox="0 0 12 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.58335 11.25V12.4167H5.41669V11.25H0.75002C0.427857 11.25 0.166687 10.9888 0.166687 10.6667V1.33333C0.166687 1.01117 0.427857 0.75 0.75002 0.75H4.25002C4.94693 0.75 5.5725 1.05552 6.00002 1.53994C6.42755 1.05552 7.05311 0.75 7.75002 0.75H11.25C11.5722 0.75 11.8334 1.01117 11.8334 1.33333V10.6667C11.8334 10.9888 11.5722 11.25 11.25 11.25H6.58335ZM10.6667 10.0833V1.91667H7.75002C7.10567 1.91667 6.58335 2.439 6.58335 3.08333V10.0833H10.6667ZM5.41669 10.0833V3.08333C5.41669 2.439 4.89437 1.91667 4.25002 1.91667H1.33335V10.0833H5.41669Z"
-                  fill="#727B8C"
-                />
-              </svg>
+              <img src={gitbookIcon}></img>
               Gitbook
             </Button>
           </div>
@@ -1258,23 +1249,7 @@ const HeaderNav = ({
             className={classes.subPoker}
           >
             <Button disableRipple className={classes.reverse2}>
-              <svg
-                style={{
-                  fontSize: "12px",
-                  marginRight: "10px",
-                  marginLeft: "-100px",
-                }}
-                width="12"
-                height="13"
-                viewBox="0 0 12 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.6666 0.166656C12.6332 0.166656 13.4166 0.950161 13.4166 1.91666V3.08332H12.25V10.0833C12.25 11.0498 11.4665 11.8333 10.5 11.8333H2.33331C1.36682 11.8333 0.583313 11.0498 0.583313 10.0833V8.91666H9.91665V10.0833C9.91665 10.3825 10.1418 10.629 10.432 10.6627L10.5 10.6667C10.7991 10.6667 11.0457 10.4415 11.0794 10.1513L11.0833 10.0833V1.33332H3.49998C3.20082 1.33332 2.95427 1.55851 2.92057 1.84863L2.91665 1.91666V7.74999H1.74998V1.91666C1.74998 0.950161 2.53348 0.166656 3.49998 0.166656H11.6666Z"
-                  fill="#727B8C"
-                />
-              </svg>
+              <img src={contractIcon}></img>
               Contract
             </Button>
           </div>
@@ -1290,23 +1265,7 @@ const HeaderNav = ({
             className={classes.subPoker}
           >
             <Button disableRipple className={classes.reverse2}>
-              <svg
-                style={{
-                  fontSize: "12px",
-                  marginRight: "20px",
-                  marginLeft: "-116px",
-                }}
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.91667 0.75V10.0833H11.25V11.25H0.75V0.75H1.91667ZM10.8375 2.67085L11.6625 3.49581L8.33333 6.82495L6.58333 5.07542L4.07915 7.57914L3.25419 6.75419L6.58333 3.42504L8.33333 5.17458L10.8375 2.67085Z"
-                  fill="#727B8C"
-                />
-              </svg>
+              <img src={chartIcon}></img>
               Chart
             </Button>
           </div>
@@ -1322,23 +1281,7 @@ const HeaderNav = ({
             className={classes.subPoker}
           >
             <Button disableRipple className={classes.reverse2}>
-              <svg
-                style={{
-                  fontSize: "12px",
-                  marginRight: "20px",
-                  marginLeft: "-105px",
-                }}
-                width="14"
-                height="12"
-                viewBox="0 0 14 12"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.6194 0.3125H12.5491L8.33334 5.13083L13.2928 11.6875H9.40959L6.36809 7.71092L2.88795 11.6875H0.957118L5.46628 6.53375L0.708618 0.3125H4.69045L7.43968 3.94725L10.6194 0.3125ZM9.94218 10.5325H11.0114L4.10945 1.40683H2.96203L9.94218 10.5325Z"
-                  fill="#727B8C"
-                />
-              </svg>
+              <img src={twitterIcon}></img>
               Twitter
             </Button>
           </div>
