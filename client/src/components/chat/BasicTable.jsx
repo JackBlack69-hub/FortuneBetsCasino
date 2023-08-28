@@ -8,8 +8,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import tableCrash from "../../assets/tableCrash.png";
-import tableJackpot from "../../assets/tableJackpot.png"
-import tableRoullete from "../../assets/tableRoullete.png"
+import tableJackpot from "../../assets/tableJackpot.png";
+import tableRoullete from "../../assets/tableRoullete.png";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles({
@@ -18,19 +18,30 @@ const useStyles = makeStyles({
     borderRadius: 20,
     backgroundColor: "#001724",
     padding: 20,
+    margin: "2%",
+    "& .MuiTable-root": {
+      border: "none",
+    },
   },
   tableRow: {
-    backgroundColor: "#021E2C",
     borderRadius: 10,
     padding: 10,
-    marginBottom: 10,
+    marginBottom: 20,
+    backgroundColor: "#021E2C",
+    "& .MuiTable-root": {
+      border: "none",
+    },
   },
   tableCell: {
     color: "white",
+    border: "none",
+
+    padding: "2%",
   },
   gamesCell: {
     display: "flex",
     alignItems: "center",
+
     paddingLeft: 10,
   },
   gamesImage: {
@@ -45,7 +56,7 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData("Crash", 159, 9648784.25 , 24, 4121032616356),
+  createData("Crash", 159, 9648784.25, 24, 4121032616356),
   createData("Jackpot", 237, 9.0, 37, 4.3),
   createData("Crash", 262, 16.0, 24, 6.0),
   createData("Roullete", 305, 3.7, 67, 4.3),
@@ -62,7 +73,7 @@ export default function BasicTable() {
   const classes = useStyles();
 
   return (
-    <>
+    <div style={{ margin: "2%" }}>
       <h1 style={{ color: "#fff", fontWeight: 400 }}>Latest bets</h1>
       <TableContainer component={Paper} className={classes.table}>
         <Table aria-label="simple table">
@@ -124,6 +135,6 @@ export default function BasicTable() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </div>
   );
 }

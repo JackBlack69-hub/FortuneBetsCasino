@@ -374,9 +374,8 @@ const App = () => {
 
                 <Route exact path="*" component={NotFound} />
               </Switch>
-              <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />{" "}
-              <br /> <br />
-              <Footer />
+
+              {/* <Footer /> */}
             </main>
             <div className={classes.addTopMargin}>
               <Drawer

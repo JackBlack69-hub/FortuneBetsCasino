@@ -19,6 +19,7 @@ import TextField from "@material-ui/core/TextField";
 import logo from "../assets/testlogo1.png";
 import metamaskIcon from "../assets/metamask.png";
 import googleIcon from "../assets/google.png";
+import moneyBagIcon from "../assets/moneyBag.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,6 +34,9 @@ const useStyles = makeStyles(theme => ({
     // height: "10px",
     boxShadow: "none",
     position: "fixed",
+    "& .MuiInputBase-root": {
+      padding: 0,
+    },
     [theme.breakpoints.down("xs")]: {
       width: "100%",
       zIndex: 100000,
@@ -138,10 +142,10 @@ const useStyles = makeStyles(theme => ({
       display: "flex",
       justifyContent: "center",
     },
-    // [theme.breakpoints.down("md")]: {
-    //   display: "flex",
-    //   justifyContent: "center",
-    // },
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      justifyContent: "center",
+    },
   },
   mobileNavTest: {
     display: "none",
@@ -188,6 +192,28 @@ const useStyles = makeStyles(theme => ({
     },
   },
 
+  paper2: {
+    width: "40%",
+
+    border: "none",
+    borderRadius: "20px",
+    padding: theme.spacing(1, 1, 1),
+    "& #simple-modal-title": {
+      color: "#FFF",
+      textAlign: "center",
+    },
+    "& .MuiTextField-root": {
+      margin: "2%",
+      background: "#021E2C",
+      borderRadius: 10,
+
+      "& label": {
+        border: "none",
+        color: "#787685",
+      },
+    },
+  },
+
   text1: {
     color: "rgba(255, 255, 255, 0.50)",
     fontFamily: "Rubik",
@@ -197,6 +223,15 @@ const useStyles = makeStyles(theme => ({
     lineHeight: "normal",
     margin: "2%",
   },
+  inputText: {
+    "& label": {
+      fontSize: "13px",
+      paddingTop: 4,
+    },
+  },
+  // inputText2:{
+  //   ""
+  // }
 }));
 
 // const classes = useStyles();
@@ -216,6 +251,7 @@ const Navbar = ({
   // Declare State
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [openDeposit, setOpenDeposit] = React.useState(false);
 
   function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -240,6 +276,14 @@ const Navbar = ({
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleDepositOpen = () => {
+    setOpenDeposit(true);
+  };
+
+  const handleDepositClose = () => {
+    setOpenDeposit(false);
   };
 
   const body = (
@@ -408,6 +452,134 @@ const Navbar = ({
     </div>
   );
 
+  const bodyDeposit = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title" style={{ marginBottom: 0, paddingBottom: 0 }}>
+        Deposit $FORTUNE
+      </h2>
+      <p
+        className={classes.text1}
+        style={{ textAlign: "center", marginTop: 0, marginBottom: "4%" }}
+      >
+        Base Mainnet
+      </p>
+      <p id="simple-modal-description">
+        <div
+          className={classes.text1}
+          style={{ color: "#fff", paddingBottom: "3%" }}
+        >
+          Want to deposit some funds to start playing? Just send it over onto
+          this address and we will credit your account with the appropriate
+          amount. Enjoy our casino!
+        </div>
+
+        <form noValidate autoComplete="off">
+          <div>
+            <p className={classes.text1} style={{ color: "#fff" }}>
+              Crypto Deposit Address:{" "}
+            </p>
+            <TextField
+              id="outlined-basic"
+              label="0x094988598D3Af7081Ebfe532852fD4d3d993B8A9"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div>
+            <p className={classes.text1} style={{ color: "#fff" }}>
+              Redeem Coupon Code:
+            </p>
+            <TextField
+              id="outlined-basic"
+              label="Enter your coupon code"
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              borderRadius: "10px",
+              border: "1px solid #FFF",
+              marginBottom: "3%",
+            }}
+          >
+            <Button
+              variant="outlined"
+              style={{ color: "#fff", textTransform: "capitalize" }}
+            >
+              <img src={moneyBagIcon} />
+              Redeem Code
+            </Button>
+          </div>
+        </form>
+      </p>
+    </div>
+  );
+
+  const bodyWithdraw = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title" style={{ marginBottom: 0, paddingBottom: 0 }}>
+        Withdraw $FORTUNE
+      </h2>
+      <p
+        className={classes.text1}
+        style={{ textAlign: "center", marginTop: 0, marginBottom: "4%" }}
+      >
+        Base Mainnet
+      </p>
+      <p id="simple-modal-description">
+        <div
+          className={classes.text1}
+          style={{ color: "#fff", paddingBottom: "3%" }}
+        >
+          Are you happy with the amount you won and want to withdraw? Amazing,
+          please input the amount of tokens you want to withdraw and the public
+          address you want to withdraw to. Let us take care of the rest.
+        </div>
+        <form noValidate autoComplete="off">
+          <TextField
+            id="outlined-basic"
+            label="Amount"
+            variant="outlined"
+            style={{ width: 240 }}
+          />
+          <TextField
+            id="outlined-basic"
+            label="Total Balance: 549.873 $FORTUNE"
+            variant="outlined"
+            style={{ width: 240 }}
+            className={classes.inputText}
+          />
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Your Address Here: 0x..."
+              variant="outlined"
+              style={{ width: 500 }}
+            />
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              borderRadius: "10px",
+              border: "1px solid #FFF",
+              marginBottom: "3%",
+            }}
+          >
+            <Button
+              variant="outlined"
+              style={{ color: "#fff", textTransform: "capitalize" }}
+            >
+              <img src={moneyBagIcon} />
+              Withdraw
+            </Button>
+          </div>
+        </form>
+      </p>
+    </div>
+  );
+
   return (
     <AppBar position="static" className={classes.root}>
       <Box
@@ -416,7 +588,7 @@ const Navbar = ({
           flexDirection: "row",
           justifyContent: "center",
           gap: "2%",
-          margin: "2%",
+          margin: "1%",
         }}
       >
         <InputBase
@@ -428,7 +600,8 @@ const Navbar = ({
             alignItems: "center",
             border: "1px solid white",
             borderRadius: "10px",
-            // margin: "2%",
+            height: "min-content",
+            marginTop: "1%",
           }}
           inputProps={{ "aria-label": "search" }}
         />
@@ -459,9 +632,28 @@ const Navbar = ({
           >
             {bodySignIN}
           </Modal>
-          <Button variant="outlined" className={classes.buttonNavbar}>
+          <Button
+            onClick={handleDepositOpen}
+            variant="outlined"
+            className={classes.buttonNavbar}
+          >
             Buy Crypto
           </Button>
+          <Modal
+            open={openDeposit}
+            onClose={handleDepositClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            {bodyWithdraw}
+          </Modal>
+        </div>
+        <div className={classes.paper2} style={{ width: "20%" }}>
+          <TextField
+            id="outlined-basic"
+            label="Sign In to get an address"
+            variant="outlined"
+          />
         </div>
       </Box>
       <Box className={classes.boxmenu}>

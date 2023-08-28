@@ -8,13 +8,17 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import jackpotImage from "../../assets/games-jackpot.png";
+import tableCrash from "../../assets/tableCrash.png";
+
+import tableRoullete from "../../assets/tableRoullete.png";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: "100%",
     background: "inherit",
+    margin: "2%",
   },
   paper: {
     display: "flex",
@@ -33,10 +37,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function imageComponent() {
+export function imageComponent(imageName) {
   return (
     <img
-      src={jackpotImage}
+      src={imageName}
       style={{ paddingLeft: "2%", paddingRight: "2%" }}
       alt="Jackpot"
     />
@@ -50,19 +54,19 @@ function SwipeableGames() {
   const maxSteps = 2;
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
 
   return (
     <div className={classes.root}>
       <div className={classes.header}>
-        <h1 style={{ color: "#fff", fontWeight: 400 }}>games</h1>
+        <h1 style={{ color: "#fff", fontWeight: 400 }}>Games</h1>
         <MobileStepper
-          style={{backgroundColor:'transparent'}}
+          style={{ backgroundColor: "transparent" }}
           steps={maxSteps}
           position="static"
           variant={null}
@@ -105,10 +109,24 @@ function SwipeableGames() {
         enableMouseEvents
       >
         <div>
-          <Paper component={imageComponent} className={classes.paper} />
+          <Paper
+            component={() => imageComponent(jackpotImage)}
+            className={classes.paper}
+          />
+          <Paper
+            component={() => imageComponent(tableCrash)}
+            className={classes.paper}
+          />
+          <Paper
+            component={() => imageComponent(tableRoullete)}
+            className={classes.paper}
+          />
         </div>
         <div>
-          <Paper component={imageComponent} className={classes.paper} />
+          <Paper
+            component={() => imageComponent(jackpotImage)}
+            className={classes.paper}
+          />
         </div>
       </SwipeableViews>
     </div>

@@ -25,7 +25,7 @@ export default function CasinoUITest() {
   return (
     <div style={{}}>
       <SwipeableTextMobileStepper />
-      <SwipeableGames />
+      <SwipeableGames style={{ margin: "5%" }} />
       <BasicTable />
     </div>
   );

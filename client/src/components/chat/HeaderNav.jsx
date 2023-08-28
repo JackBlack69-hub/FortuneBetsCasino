@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
 import { makeStyles, Grid } from "@material-ui/core";
-import CasinoUI from "./CasinoUI";
 
 import { NavLink as Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -37,7 +36,7 @@ import Futures_Trading from "../../assets/Futures_Trading.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "5.58rem",
+    // height: "5.58rem",
 
     "& > div": {
       "& > div": {
@@ -99,7 +98,7 @@ const useStyles = makeStyles(theme => ({
       },
       "&:hover": {
         backgroundColor: "rgba(225, 80, 36, 0.20)",
-        // color: "#E25222",
+        color: "#E25222",
         "& span .MuiButton-startIcon": {
           color: "#E25222",
         },
@@ -134,7 +133,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "14px",
         marginLeft: "17px",
-        color: "#E25222",
+        // color: "#E25222",
       },
     },
   },
@@ -161,7 +160,7 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: "rgba(225, 80, 36, 0.20)",
         color: "#fff",
         "& span .MuiButton-startIcon": {
-          color: "#E25222",
+          // color: "#E25222",
         },
       },
       "&:active": {
@@ -253,7 +252,7 @@ const useStyles = makeStyles(theme => ({
       "& span .MuiButton-startIcon": {
         marginRight: "19px",
         marginLeft: "20px",
-        color: "#E25222",
+        // color: "#E25222",
       },
     },
   },
@@ -447,6 +446,9 @@ const useStyles = makeStyles(theme => ({
   },
   reverse2: {
     display: "flex",
+    alignItems: "left",
+    textTransform: "capitalize",
+    textAlign: "left",
   },
   login: {
     display: "flex",
@@ -529,14 +531,14 @@ const useStyles = makeStyles(theme => ({
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
     },
     "& .levelnav": {
       color: "#fff",
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
       padding: "5px",
       marginLeft: "155px",
       borderRadius: "5px",
@@ -550,35 +552,35 @@ const useStyles = makeStyles(theme => ({
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
     },
     "& .bronzenav": {
       color: "#C27C0E",
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
     },
     "& .silvernav": {
       color: "#95A5A6",
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
     },
     "& .goldnav": {
       color: "#b99309",
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
     },
     "& .diamondnav": {
       color: "#3498DB",
       fontSize: "11px",
       fontFamily: "Rubik",
       fontWeight: 500,
-      textTransform: "uppercase",
+      textTransform: "capitalize",
     },
   },
   balance: {},
@@ -719,10 +721,7 @@ const HeaderNav = ({
         open={openFree}
         code={affiliateCode}
       />
-      <div
-        className={classes.mobileNavTest}
-        style={{ display: "flex" }}
-      >
+      <div className={classes.mobileNavTest} style={{ display: "flex" }}>
         <div
           style={{
             display: "flex",
@@ -730,7 +729,7 @@ const HeaderNav = ({
             flexDirection: "column",
           }}
         >
-          <div style={{ display: "flex", alignSelf: "flex-start"}}>
+          <div style={{ display: "flex", alignSelf: "flex-start" }}>
             <a
               className={classes.logoimage}
               href="https://fortunebets.xyz/"
@@ -741,7 +740,11 @@ const HeaderNav = ({
             </a>
             <div
               className="text"
-              style={{ display: "flex", flexDirection: "column",alignItems:'flex-start' }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
             >
               <span
                 style={{
@@ -767,81 +770,67 @@ const HeaderNav = ({
             </div>
           </div>
 
-         
-            <div style={{ marginTop: 15, display: 'flex',flexDirection:'row'}}>
-              <span style={{ color: 'white', fontSize: 19 }}>
-                0.000056347
-              </span>
-              <Button
-                style={{
-                  marginTop: 3,
-                  backgroundColor: '#05FF0033',
-                  color: '#00D758',
-                  marginLeft: 20, // Adjusted margin
-                  height: 24,
-                  minWidth: 65,
-                }}
-              >
-                +24.56%
-              </Button>
-            </div>
-            <div
+          <div style={{ marginTop: 15, display: "flex", flexDirection: "row" }}>
+            <span style={{ color: "white", fontSize: 19 }}>0.000056347</span>
+            <Button
               style={{
-                marginTop: 20,
-                display: 'flex',
-                flexDirection:'row',
-                justifyContent: 'space-between', 
-                width: '100%',
-                alignSelf: "flex-start"
+                // marginTop: 3,
+                backgroundColor: "#05FF0033",
+                color: "#00D758",
+                marginLeft: 20, // Adjusted margin
+                height: 24,
+                minWidth: 65,
               }}
             >
-              <button className={classes.Topbutton} >Buy/Sell</button>
-              <button className={classes.Topbutton}>Dashboard</button>
-            </div>
+              +24.56%
+            </Button>
           </div>
-
+          <div
+            style={{
+              marginTop: 20,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              width: "100%",
+              alignSelf: "flex-start",
+            }}
+          >
+            <button className={classes.Topbutton}>Buy/Sell</button>
+            <button className={classes.Topbutton}>Dashboard</button>
+          </div>
         </div>
-      
-      <br />
-      
-      <Link
-            exact
-            // activeClassName={classes.subActivePoker}
-            // className={classes.subPoker}
-            to="/CasinoUI"
-            // style={{ outline: "none" }}
-          >
-        <Button styles={{ display: "flex", flexDirection: "row", }}>
-          <div
-            className="casino"
-            style={{
-              color: "#fff",
-              fontFamily: "Rubik",
-              fontSize: "18px",
-              fontWeight: 400,
-              marginTop: 5,
-              paddingRight: 10,
-              paddingLeft: 18,
-              
-            }}
-          >
-            <img src={Casino} alt="" />
-          </div>
+      </div>
 
-          <div
-            className="casino"
-            style={{
-              color: "#fff",
-              fontFamily: "Rubik",
-              fontSize: "18px",
-              fontWeight: 400,
-            }}
-          >
-            <span>Casino</span>
-          </div>
-        </Button>
-      </Link>
-      
+      <br />
+
+      <Button styles={{ display: "flex", flexDirection: "row" }}>
+        <div
+          className="casino"
+          style={{
+            color: "#fff",
+            fontFamily: "Rubik",
+            fontSize: "18px",
+            fontWeight: 400,
+            marginTop: 5,
+            paddingRight: 10,
+            paddingLeft: 18,
+          }}
+        >
+          <img src={Casino} alt="" />
+        </div>
+
+        <div
+          className="casino"
+          style={{
+            color: "#fff",
+            fontFamily: "Rubik",
+            fontSize: "18px",
+            fontWeight: 400,
+          }}
+        >
+          <span>Casino</span>
+        </div>
+      </Button>
 
       <br />
       <Box
@@ -952,7 +941,7 @@ const HeaderNav = ({
 
           <Link
             exact
-            activeClassName={classes.subActivecoi}
+            activeClassName={classes.subActivePoker}
             className={classes.subCoinflip}
             to="/coinflip"
             style={{ outline: "none" }}
@@ -1196,6 +1185,7 @@ const HeaderNav = ({
               fontFamily: "Rubik",
               fontSize: "18px",
               fontWeight: 400,
+              textTransform: "capitalize",
             }}
           >
             <span>Futures Trading</span>
@@ -1268,7 +1258,7 @@ const HeaderNav = ({
                 style={{
                   fontSize: "12px",
                   marginRight: "10px",
-                  marginLeft: "-90px",
+                  marginLeft: "-100px",
                 }}
                 width="12"
                 height="13"
@@ -1370,7 +1360,7 @@ const HeaderNav = ({
           ) : isAuthenticated && user ? (
             <Box>
               <div className={classes.login}>
-                {/* <Box className={classes.pfp}>
+                <Box className={classes.pfp}>
                   <Box className={classes.avatar2}>
                     <Link exact to="/profile" style={{ outline: "none" }}>
                       <Avatar
@@ -1413,8 +1403,8 @@ const HeaderNav = ({
                       )}
                     </Box>
                   </Link>
-                </Box> */}
-                {/* <Box className={classes.pfpp}>
+                </Box>
+                <Box className={classes.pfpp}>
                   <span>
                     <span
                       style={{ cursor: "pointer" }}
@@ -1432,7 +1422,7 @@ const HeaderNav = ({
                       )}
                     </span>
                   </span>
-                </Box> */}
+                </Box>
               </div>
               <Box>
                 <Box className={classes.balance}>
